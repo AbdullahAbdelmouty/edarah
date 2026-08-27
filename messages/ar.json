@@ -1,0 +1,24 @@
+{
+  "Header": {
+    "nav_home": "الرئيسية",
+    "nav_about": "عن إدارة",
+    "nav_services": "الخدمات",
+    "nav_sectors": "القطاعات",
+    "nav_clients": "شركاء النجاح",
+    "contact_us": "تواصل معنا",
+    "privacy_policy": "سياسة الخصوصية",
+    "terms_of_service": "شروط الخدمة",
+    "copyright": "© {year} شركة إدارة للخدمات الأمنية",
+    "switch_lang": "English"
+  },
+  "Hero": {
+    "eyebrow": "حلول أمنية متكاملة",
+    "title": "نبتكر الحماية، ونُعيد تشكيل الحلول الأمنية",
+    "description": "حلول أمنية متقدمة مصممة لحماية منشآتك، أصولك، وعملياتك بأعلى معايير الكفاءة والموثوقية.",
+    "cta_primary": "اكتشف خدماتنا",
+    "cta_secondary": "تواصل معنا",
+    "scroll_hint": "Scroll to explore",
+    "city": "الرياض",
+    "country": "المملكة العربية السعودية"
+  }
+}

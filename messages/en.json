@@ -1,0 +1,24 @@
+{
+  "Header": {
+    "nav_home": "Home",
+    "nav_about": "About",
+    "nav_services": "Services",
+    "nav_sectors": "Sectors",
+    "nav_clients": "Partners",
+    "contact_us": "Contact Us",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service",
+    "copyright": "© {year} Edarah Security Services",
+    "switch_lang": "العربية"
+  },
+  "Hero": {
+    "eyebrow": "Integrated Security Solutions",
+    "title": "We Innovate Protection, We Lead Security Solutions",
+    "description": "Advanced security solutions designed to protect your facilities, assets, and operations with the highest standards of efficiency and reliability.",
+    "cta_primary": "Discover Services",
+    "cta_secondary": "Contact Us",
+    "scroll_hint": "Scroll to explore",
+    "city": "Riyadh",
+    "country": "Saudi Arabia"
+  }
+}
