@@ -1,6 +1,8 @@
 import HeroSection from "@/components/website/sections/HeroSection";
 import WhyUsStatsSection from "@/components/website/sections/WhyUsStatsSection";
 import EdarahServicesSection from "@/components/website/sections/EdarahServicesSection";
+import EdarahSectorsSection from "@/components/website/sections/EdarahSectorsSection";
+import EdarahMechanismSection from "@/components/website/sections/HowWeWorkSection";
 
 export default function Home() {
   return (
@@ -8,6 +10,8 @@ export default function Home() {
       <HeroSection />
       <WhyUsStatsSection />
       <EdarahServicesSection />
+      <EdarahSectorsSection />
+      <EdarahMechanismSection />
     </>
   );
 }

@@ -109,7 +109,7 @@ export default function EdarahServicesSection() {
   return (
     <section
       dir="rtl"
-      className="relative min-h-screen overflow-hidden bg-[#0a0a0c] font-[Tajawal,sans-serif] text-[#f2ede6] antialiased"
+      className="relative min-h-screen overflow-hidden bg-[#0a0a0c] text-[#f2ede6] antialiased"
     >
       {/* background texture + glow */}
       <div className="pointer-events-none absolute inset-0 z-0 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,0.012)_0px,rgba(255,255,255,0.012)_1px,transparent_1px,transparent_3px)] mix-blend-overlay" />
