@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 
 const servicesData = [
   {
@@ -10,7 +11,7 @@ const servicesData = [
     description:
       "تأمين المنشآت بحراسات ثابتة أو دوريات متحركة، حسب طبيعة كل موقع.",
     tags: ["حراسات ثابتة", "دوريات متحركة", "تأمين منشآت"],
-    image: "/security-team.webp", // Replace with your Edarah guard asset
+    image: "/security-team.webp",
   },
   {
     id: "002",
@@ -50,122 +51,214 @@ export default function EdarahServicesSection() {
   return (
     <section
       dir="rtl"
-      className="relative w-full min-h-screen bg-zinc-950 text-zinc-100 py-20 px-6 md:px-12 lg:px-24 font-sans overflow-hidden"
+      className="relative overflow-hidden bg-[#080808] text-white"
     >
-      {/* Background Accent Element */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#7A1B1E]/10 to-transparent pointer-events-none" />
-
-      {/* Main Header */}
-      <div className="mb-16 text-right">
-        <div className="flex items-center justify-end gap-3 mb-2">
-          <span className="text-sm md:text-base text-zinc-400">
-            ماذا نقدم - بمنهجية إدارة
-          </span>
-          <div className="w-8 h-8 rounded-full bg-[#7A1B1E] flex items-center justify-center">
-            <span className="text-white text-xs">◆</span>
-          </div>
-        </div>
-        <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tight">
-          الخدمات
-        </h2>
+      {/* Ambient background */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -right-40 top-20 h-[500px] w-[500px] rounded-full bg-[#7A1B1E]/10 blur-[140px]" />
+        <div className="absolute -left-40 bottom-0 h-[400px] w-[400px] rounded-full bg-white/[0.02] blur-[120px]" />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative z-10">
-        {/* Left Column: Sub-service Tags */}
-        <div className="lg:col-span-3 order-3 lg:order-1 flex flex-col gap-3 justify-center min-h-[300px]">
-          <h4 className="text-zinc-500 text-sm mb-4 ps-2">الخدمات الفرعية</h4>
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeService.id}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.4, staggerChildren: 0.1 }}
-              className="flex flex-wrap lg:flex-col gap-3"
-            >
-              {activeService.tags.map((tag, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-zinc-900 border border-zinc-800 rounded-full px-5 py-2 text-sm text-center text-zinc-300 hover:bg-[#7A1B1E] hover:text-white transition-colors cursor-default"
-                >
-                  {tag}
-                </motion.div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
+      <div className="relative mx-auto max-w-[1600px] px-6 py-24 md:px-10 lg:px-16 lg:py-32">
+        {/* ================= HEADER ================= */}
+        <div className="mb-20 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+          <div>
+            <div className="mb-5 flex items-center gap-3">
+              <span className="h-px w-10 bg-[#7A1B1E]" />
+
+              <span className="text-xs font-medium tracking-[0.2em] text-zinc-500">
+                EDARAH / SERVICES
+              </span>
+            </div>
+
+            <h2 className="text-5xl font-semibold tracking-[-0.04em] text-white md:text-7xl lg:text-8xl">
+              الخدمات
+            </h2>
+          </div>
+
+          <p className="max-w-md text-sm leading-7 text-zinc-500 lg:text-right">
+            حلول أمنية متكاملة مصممة لحماية منشآتك وأصولك وأفرادك، وفق منهجية
+            دقيقة تتناسب مع طبيعة كل موقع.
+          </p>
         </div>
 
-        {/* Center Column: Image & Visuals */}
-        <div className="lg:col-span-5 order-2 lg:order-2 flex justify-center items-center">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeService.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.5 }}
-              className="relative w-full aspect-video md:aspect-[4/3] rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl shadow-[#7A1B1E]/10"
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent z-10" />
-              {/* Replace with next/image in your project */}
-              <img
-                src={activeService.image}
-                alt={activeService.title}
-                className="object-cover w-full h-full opacity-80"
-              />
-              <div className="absolute bottom-6 right-6 z-20">
-                <button className="bg-zinc-800/80 backdrop-blur-sm hover:bg-[#7A1B1E] text-white text-xs px-4 py-2 rounded-full transition-all">
-                  اقرأ المزيد
-                </button>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
+        {/* ================= MAIN GRID ================= */}
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
+          {/* ================= SERVICE LIST ================= */}
+          <div className="order-1 lg:order-3 lg:col-span-4">
+            <div className="mb-6 flex items-center justify-between">
+              <span className="text-xs uppercase tracking-widest text-zinc-600">
+                Our Expertise
+              </span>
 
-        {/* Right Column: Interactive Service List */}
-        <div className="lg:col-span-4 order-1 lg:order-3 flex flex-col gap-4 w-full">
-          {servicesData.map((service) => {
-            const isActive = activeService.id === service.id;
+              <span className="text-xs text-zinc-700">
+                {servicesData.length.toString().padStart(2, "0")} Services
+              </span>
+            </div>
 
-            return (
-              <div
-                key={service.id}
-                onClick={() => setActiveService(service)}
-                className={`group cursor-pointer border-b border-zinc-800 pb-4 transition-all duration-300 ${isActive ? "mt-0" : "opacity-60 hover:opacity-100"}`}
-              >
-                <div className="flex justify-between items-center mb-2">
-                  <h3
-                    className={`text-2xl font-bold transition-colors duration-300 ${isActive ? "text-[#7A1B1E]" : "text-zinc-300 group-hover:text-white"}`}
+            <div className="space-y-1">
+              {servicesData.map((service) => {
+                const isActive = activeService.id === service.id;
+
+                return (
+                  <motion.button
+                    key={service.id}
+                    onClick={() => setActiveService(service)}
+                    whileHover={{ x: -4 }}
+                    className="group relative flex w-full items-center gap-5 border-b border-white/[0.07] py-5 text-right"
                   >
-                    {service.title}
-                  </h3>
-                  <span className="text-zinc-600 font-mono text-sm">
-                    ({service.id})
+                    {/* Active indicator */}
+                    <motion.div
+                      initial={false}
+                      animate={{
+                        scaleY: isActive ? 1 : 0,
+                        opacity: isActive ? 1 : 0,
+                      }}
+                      className="absolute right-0 top-0 h-full w-[2px] origin-center bg-[#7A1B1E]"
+                    />
+
+                    {/* Number */}
+                    <span
+                      className={`w-10 shrink-0 font-mono text-xs transition-colors ${
+                        isActive ? "text-[#A62A2F]" : "text-zinc-700"
+                      }`}
+                    >
+                      {service.id}
+                    </span>
+
+                    {/* Title */}
+                    <span
+                      className={`flex-1 text-lg font-medium transition-all duration-300 md:text-xl ${
+                        isActive
+                          ? "translate-x-0 text-white"
+                          : "text-zinc-500 group-hover:text-zinc-200"
+                      }`}
+                    >
+                      {service.title}
+                    </span>
+
+                    {/* Arrow */}
+                    <motion.span
+                      animate={{
+                        x: isActive ? -4 : 0,
+                        opacity: isActive ? 1 : 0.25,
+                      }}
+                      className="text-[#A62A2F]"
+                    >
+                      ←
+                    </motion.span>
+                  </motion.button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* ================= IMAGE ================= */}
+          <div className="order-2 lg:col-span-5">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeService.id}
+                initial={{ opacity: 0, scale: 0.97 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.02 }}
+                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-zinc-900 md:aspect-[5/4] lg:aspect-[4/5]"
+              >
+                <Image
+                  src={activeService.image}
+                  alt={activeService.title}
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-700"
+                />
+
+                {/* Image overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
+
+                {/* Top label */}
+                <div className="absolute left-6 top-6 flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-4 py-2 backdrop-blur-md">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#A62A2F]" />
+
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-white/70">
+                    Security Solution
                   </span>
                 </div>
 
-                {/* Expandable Description */}
-                <AnimatePresence>
-                  {isActive && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
+                {/* Bottom content */}
+                <div className="absolute bottom-0 right-0 w-full p-7 md:p-9">
+                  <div className="mb-4 flex items-center gap-3">
+                    <span className="font-mono text-xs text-[#A62A2F]">
+                      / {activeService.id}
+                    </span>
+
+                    <span className="h-px w-8 bg-white/20" />
+                  </div>
+
+                  <h3 className="max-w-lg text-3xl font-semibold leading-tight md:text-4xl">
+                    {activeService.title}
+                  </h3>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* ================= DETAILS ================= */}
+          <div className="order-3 flex flex-col justify-end lg:col-span-3">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeService.id}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.35 }}
+              >
+                {/* Number */}
+                <div className="mb-8 text-7xl font-semibold tracking-[-0.08em] text-white/[0.04] md:text-8xl">
+                  {activeService.id}
+                </div>
+
+                {/* Description */}
+                <p className="border-r border-[#7A1B1E] pr-5 text-base leading-8 text-zinc-400">
+                  {activeService.description}
+                </p>
+
+                {/* Tags */}
+                <div className="mt-8 flex flex-wrap gap-2">
+                  {activeService.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-white/[0.08] bg-white/[0.025] px-4 py-2 text-xs text-zinc-500 transition-colors hover:border-[#7A1B1E]/50 hover:text-zinc-300"
                     >
-                      <p className="text-zinc-400 text-sm leading-relaxed pt-2 pe-4 border-r-2 border-[#7A1B1E]">
-                        {service.description}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <button className="group mt-10 inline-flex items-center gap-4 text-sm font-medium text-white">
+                  <span className="relative">
+                    اكتشف الخدمة
+                    <span className="absolute -bottom-1 right-0 h-px w-full origin-right scale-x-0 bg-[#A62A2F] transition-transform duration-300 group-hover:scale-x-100" />
+                  </span>
+
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition-all duration-300 group-hover:border-[#7A1B1E] group-hover:bg-[#7A1B1E]">
+                    ←
+                  </span>
+                </button>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {/* ================= BOTTOM META ================= */}
+        <div className="mt-20 flex items-center justify-between border-t border-white/[0.06] pt-6">
+          <span className="text-[10px] uppercase tracking-[0.25em] text-zinc-700">
+            EDARAH SECURITY SERVICES
+          </span>
+
+          <span className="font-mono text-[10px] text-zinc-700">
+            24 / 7 / 365
+          </span>
         </div>
       </div>
     </section>
