@@ -923,7 +923,7 @@ export default function EdarahAboutSection() {
                             bg-[#f5f5f3]
                             transition-all
                             duration-300
-                            group-hover:bg-[#5E1E2B]
+                        
                             group-hover:text-white
                             sm:h-11
                             sm:w-11
