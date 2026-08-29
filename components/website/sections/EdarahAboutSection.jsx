@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   ShieldCheck,
   Target,
@@ -9,11 +9,13 @@ import {
   Zap,
   Handshake,
   ArrowUpLeft,
-  Check,
+  CheckCircle2,
 } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import CornerBrackets from "@/components/decor/Cornerbrackets";
+
+const BRAND = "#5E1E2B";
 
 const values = [
   {
@@ -48,312 +50,794 @@ const values = [
   },
 ];
 
-const reveal = {
-  hidden: {
-    opacity: 0,
-    y: 35,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
 export default function EdarahAboutSection() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const reveal = {
+    hidden: {
+      opacity: 0,
+      y: shouldReduceMotion ? 0 : 22,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
+
+  const stagger = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.09,
+        delayChildren: 0.05,
+      },
+    },
+  };
+
   return (
     <section
       dir="rtl"
-      className="relative overflow-hidden bg-[#08090a] py-24 text-white sm:py-32"
+      className="
+        relative
+        w-full
+        overflow-hidden
+        bg-[#f5f5f3]
+        px-4
+        py-14
+        sm:px-6
+        sm:py-16
+        md:px-8
+        md:py-20
+        lg:py-24
+      "
     >
-      {/* =====================================================
+      {/* =========================================================
           BACKGROUND
-      ====================================================== */}
+      ========================================================== */}
 
       <div className="pointer-events-none absolute inset-0">
         {/* Grid */}
         <div
-          className="absolute inset-0 opacity-[0.035]"
+          className="absolute inset-0 opacity-[0.025]"
           style={{
-            backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)
-            `,
-            backgroundSize: "72px 72px",
+            backgroundImage:
+              "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
           }}
         />
 
-        {/* Red glow */}
-        <div className="absolute -right-40 top-20 h-[500px] w-[500px] rounded-full bg-[#8f2026]/10 blur-[150px]" />
+        {/* Brand glow */}
+        <div
+          className="
+            absolute
+            -right-24
+            top-0
+            h-64
+            w-64
+            rounded-full
+            blur-[80px]
+            sm:-right-40
+            sm:h-[500px]
+            sm:w-[500px]
+            sm:blur-[100px]
+          "
+          style={{
+            backgroundColor: `${BRAND}09`,
+          }}
+        />
 
-        <div className="absolute -left-40 bottom-20 h-[400px] w-[400px] rounded-full bg-[#8f2026]/5 blur-[140px]" />
+        <div
+          className="
+            absolute
+            -bottom-32
+            -left-32
+            h-72
+            w-72
+            rounded-full
+            blur-[100px]
+          "
+          style={{
+            backgroundColor: `${BRAND}06`,
+          }}
+        />
       </div>
 
-      <div className="relative mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
-        {/* =====================================================
-            SECTION HEADER
-        ====================================================== */}
+      <div className="relative mx-auto max-w-[1400px]">
+        {/* =========================================================
+            HEADER
+        ========================================================== */}
 
         <motion.div
           variants={reveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="mb-20"
+          viewport={{
+            once: true,
+            margin: "-80px",
+          }}
+          className="mb-8 sm:mb-10 md:mb-12"
         >
-          <div className="mb-7 flex items-center gap-4">
-            <span className="h-px w-12 bg-[#98252b]" />
+          {/* Eyebrow */}
 
-            <span className="font-mono text-[10px] font-medium tracking-[0.25em] text-white/30">
+          <div className="mb-4 flex items-center gap-3 sm:mb-5">
+            <span
+              className="
+                flex
+                h-7
+                w-7
+                shrink-0
+                items-center
+                justify-center
+                rounded-full
+                text-white
+                sm:h-8
+                sm:w-8
+              "
+              style={{
+                backgroundColor: BRAND,
+              }}
+            >
+              <ShieldCheck className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+            </span>
+
+            <span
+              className="
+                text-[11px]
+                font-bold
+                tracking-[0.15em]
+                sm:text-xs
+                md:text-sm
+              "
+              style={{
+                color: BRAND,
+              }}
+            >
               EDARAH / ABOUT
             </span>
           </div>
 
-          <div className="grid gap-10 lg:grid-cols-[1fr_420px] lg:items-end">
+          {/* Heading + intro */}
+
+          <div
+            className="
+              grid
+              gap-5
+              sm:gap-8
+              lg:grid-cols-[1fr_420px]
+              lg:items-end
+            "
+          >
             <div>
-              <h2 className="text-5xl font-black leading-[1.05] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
+              <h2
+                className="
+                  text-[clamp(2rem,6vw,4rem)]
+                  font-black
+                  leading-[1.12]
+                  tracking-tight
+                  text-[#1c1c1c]
+                "
+              >
                 من نحن
               </h2>
 
-              <div className="mt-7 h-[3px] w-16 bg-[#98252b]" />
+              <div
+                className="mt-4 h-[3px] w-12 sm:mt-6 sm:w-14"
+                style={{
+                  backgroundColor: BRAND,
+                }}
+              />
             </div>
 
-            <p className="max-w-md text-sm leading-8 text-white/40 lg:text-base">
-              شركة متخصصة في تقديم الخدمات الأمنية المتكاملة، نعمل على بناء
-              بيئات أكثر أمانًا من خلال منظومة تجمع بين الكفاءة التشغيلية،
-              الكوادر المؤهلة، والتقنيات الحديثة.
+            <p
+              className="
+                max-w-lg
+                text-sm
+                leading-6
+                text-black/55
+                sm:text-[15px]
+                sm:leading-8
+                md:text-base
+              "
+            >
+              شركة متخصصة في تقديم الخدمات الأمنية المتكاملة للقطاعين العام
+              والخاص، من خلال منظومة تجمع بين الكفاءة التشغيلية، الكوادر
+              المؤهلة، والتقنيات الحديثة.
             </p>
           </div>
         </motion.div>
 
-        {/* =====================================================
-            ABOUT / IMAGE
-        ====================================================== */}
-
-        <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-          {/* Image */}
-
-          <motion.div
-            variants={reveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="group relative min-h-[520px] overflow-hidden sm:min-h-[620px]"
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1582136009418-4202353a479a?auto=format&fit=crop&w=1400&q=85"
-              alt="إدارة للخدمات الأمنية"
-              fill
-              unoptimized
-              className="
-                object-cover
-                grayscale
-                contrast-[1.1]
-                transition-transform
-                duration-[1.4s]
-                group-hover:scale-105
-              "
-            />
-
-            {/* Dark overlay */}
-
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-black/20" />
-
-            {/* Red tint */}
-
-            <div className="absolute inset-0 bg-[#63151a]/10 mix-blend-multiply" />
-
-            {/* Border */}
-
-            <div className="absolute inset-5 border border-white/10" />
-
-            {/* Top label */}
-
-            <div className="absolute right-8 top-8 flex items-center gap-3">
-              <span className="h-2 w-2 rounded-full bg-[#a52a30] shadow-[0_0_16px_rgba(165,42,48,0.8)]" />
-
-              <span className="font-mono text-[10px] tracking-[0.2em] text-white/60">
-                SECURITY / 24
-              </span>
-            </div>
-
-            {/* Bottom information */}
-
-            <div className="absolute bottom-8 right-8 left-8">
-              <div className="mb-5 h-px w-16 bg-[#a52a30]" />
-
-              <p className="max-w-sm text-sm leading-8 text-white/60">
-                حماية متكاملة تساعد عملاءنا على التركيز على أعمالهم بثقة
-                واستقرار.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Text */}
-
-          <motion.div
-            variants={reveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="flex flex-col justify-between border border-white/[0.07] bg-white/[0.02] p-7 sm:p-10 lg:p-12"
-          >
-            <div>
-              <div className="mb-10 flex items-center justify-between">
-                <span className="font-mono text-xs text-white/25">01 / 02</span>
-
-                <ShieldCheck className="h-6 w-6 text-[#98252b]" />
-              </div>
-
-              <h3 className="text-2xl font-extrabold leading-relaxed sm:text-3xl">
-                شريكك في
-                <br />
-                <span className="text-white/35">الأمن والاستقرار.</span>
-              </h3>
-
-              <div className="my-8 h-px bg-white/[0.08]" />
-
-              <div className="space-y-6 text-sm leading-8 text-white/40">
-                <p>
-                  شركة متخصصة في تقديم الخدمات الأمنية المتكاملة للقطاعين العام
-                  والخاص، تخدم عملاء متنوعين في القطاعات التجارية والصناعية
-                  والسكنية والحكومية.
-                </p>
-
-                <p>
-                  وتتبع الشركة إلى مجموعة العبيكان القابضة، إحدى أبرز المجموعات
-                  الاقتصادية السعودية ذات الحضور الممتد في التطوير العقاري
-                  والمقاولات والتشغيل والاستثمار وإدارة الأملاك.
-                </p>
-
-                <p>
-                  نقدم مجموعة متكاملة من الخدمات التي تشمل الحراسات الأمنية،
-                  والمراقبة الإلكترونية، وإدارة المخاطر، إلى جانب برامج تدريب
-                  متخصصة لتأهيل كوادرنا الأمنية وفق أعلى المعايير المهنية.
-                </p>
-              </div>
-            </div>
-
-            {/* Bottom */}
-
-            <div className="mt-12 flex items-center justify-between border-t border-white/[0.08] pt-6">
-              <span className="text-xs text-white/25">
-                جزء من مجموعة العبيكان القابضة
-              </span>
-
-              <ArrowUpLeft className="h-5 w-5 text-white/20" />
-            </div>
-          </motion.div>
-        </div>
-
-        {/* =====================================================
-            VISION / MISSION
-        ====================================================== */}
+        {/* =========================================================
+            MAIN BENTO
+        ========================================================== */}
 
         <motion.div
-          variants={reveal}
+          variants={stagger}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
-          className="relative mt-5 overflow-hidden border border-white/[0.08]"
+          viewport={{
+            once: true,
+            margin: "-60px",
+          }}
+          className="
+            grid
+            grid-cols-1
+            gap-4
+            sm:gap-5
+            md:gap-6
+            lg:grid-cols-12
+          "
         >
-          <Image
-            src="https://images.unsplash.com/photo-1590424681669-e09210eb70d1?auto=format&fit=crop&w=1800&q=85"
-            alt=""
-            fill
-            unoptimized
-            className="object-cover grayscale opacity-20"
-          />
+          {/* =====================================================
+              ABOUT TEXT
+          ====================================================== */}
 
-          <div className="absolute inset-0 bg-[#08090a]/90" />
+          <motion.div variants={reveal} className="lg:col-span-7">
+            <Card
+              className="
+                h-full
+                rounded-[22px]
+                border-black/[0.04]
+                bg-white
+                shadow-[0_8px_30px_rgba(0,0,0,0.025)]
+                sm:rounded-[28px]
+              "
+            >
+              <CardContent
+                className="
+                  flex
+                  h-full
+                  flex-col
+                  justify-between
+                  gap-5
+                  p-5
+                  sm:gap-5
+                  sm:p-5
+                  md:gap-6
+                  md:p-7
+                  lg:p-11
+                "
+              >
+                {/* Top */}
 
-          <div className="relative grid lg:grid-cols-2">
-            {/* Vision */}
+                <div className="flex items-start justify-between">
+                  <span
+                    className="
+                      text-xs
+                      font-bold
+                      tracking-widest
+                      text-black/25
+                    "
+                  >
+                    01
+                  </span>
 
-            <div className="border-b border-white/[0.08] p-8 sm:p-12 lg:border-b-0 lg:border-l">
-              <div className="mb-8 flex items-center justify-between">
-                <span className="font-mono text-[10px] tracking-[0.2em] text-[#98252b]">
-                  01 / VISION
-                </span>
+                  <div
+                    className="
+                      flex
+                      h-10
+                      w-10
+                      items-center
+                      justify-center
+                      rounded-full
+                      sm:h-11
+                      sm:w-11
+                    "
+                    style={{
+                      backgroundColor: `${BRAND}12`,
+                      color: BRAND,
+                    }}
+                  >
+                    <ShieldCheck className="h-4.5 w-4.5 sm:h-5 sm:w-5" />
+                  </div>
+                </div>
 
-                <Target className="h-5 w-5 text-white/20" />
+                {/* Content */}
+
+                <div>
+                  <h3
+                    className="
+                      max-w-xl
+                      text-2xl
+                      font-extrabold
+                      leading-[1.4]
+                      text-[#1c1c1c]
+                      sm:text-3xl
+                      md:text-4xl
+                    "
+                  >
+                    شريكك في
+                    <br />
+                    <span className="text-black/30">الأمن والاستقرار.</span>
+                  </h3>
+
+                  <div className="my-5 h-px w-full bg-black/[0.07] sm:my-6" />
+
+                  <div
+                    className="
+                      space-y-3
+                      text-sm
+                      leading-6
+                      text-black/55
+                      sm:space-y-4
+                      sm:text-[15px]
+                      sm:leading-7
+                      md:text-base
+                    "
+                  >
+                    <p>
+                      شركة متخصصة في تقديم الخدمات الأمنية المتكاملة للقطاعين
+                      العام والخاص، تخدم عملاء متنوعين في القطاعات التجارية
+                      والصناعية والسكنية والحكومية.
+                    </p>
+
+                    <p>
+                      وتتبع الشركة إلى مجموعة العبيكان القابضة، إحدى أبرز
+                      المجموعات الاقتصادية السعودية ذات الحضور الممتد في التطوير
+                      العقاري والمقاولات والتشغيل والاستثمار وإدارة الأملاك.
+                    </p>
+
+                    <p>
+                      نقدم مجموعة متكاملة من الخدمات التي تشمل الحراسات الأمنية،
+                      والمراقبة الإلكترونية، وإدارة المخاطر، إلى جانب برامج
+                      تدريب متخصصة لتأهيل كوادرنا الأمنية وفق أعلى المعايير
+                      المهنية.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bottom */}
+
+                <div
+                  className="
+                    flex
+                    flex-wrap
+                    items-center
+                    justify-between
+                    gap-3
+                    border-t
+                    border-black/[0.07]
+                    pt-5
+                  "
+                >
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2
+                      className="h-4 w-4 shrink-0"
+                      style={{
+                        color: BRAND,
+                      }}
+                    />
+
+                    <span className="text-xs font-medium text-black/40">
+                      منظومة أمنية متكاملة
+                    </span>
+                  </div>
+
+                  <span className="text-xs font-bold text-black/20">
+                    EDARAH
+                  </span>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* =====================================================
+              IMAGE
+          ====================================================== */}
+
+          <motion.div variants={reveal} className="h-full lg:col-span-5">
+            <Card
+              className="
+                group
+                relative
+                h-full
+                overflow-hidden
+                rounded-[22px]
+                border-0
+                bg-black
+                p-0
+                shadow-[0_8px_30px_rgba(0,0,0,0.08)]
+                sm:rounded-[28px]
+              "
+            >
+              <div
+                className="
+                  relative
+                  h-[300px]
+                  w-full
+                  overflow-hidden
+                  sm:h-[380px]
+                  lg:h-full
+                  lg:min-h-[500px]
+                "
+              >
+                {/* Image */}
+
+                <Image
+                  src="/man3.webp"
+                  alt="إدارة للخدمات الأمنية"
+                  fill
+                  priority
+                  unoptimized
+                  sizes="
+                    (max-width: 640px) 100vw,
+                    (max-width: 1024px) 100vw,
+                    40vw
+                  "
+                  className="
+                    object-cover
+                    object-[50%_30%]
+                    grayscale-[10%]
+                    transition-transform
+                    duration-700
+                    ease-out
+                    group-hover:scale-[1.04]
+                  "
+                />
+
+                {/* Cinematic gradient */}
+
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-gradient-to-t
+                    from-black/90
+                    via-black/30
+                    to-black/5
+                  "
+                />
+
+                {/* Brand tint */}
+
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    mix-blend-multiply
+                  "
+                  style={{
+                    backgroundColor: `${BRAND}14`,
+                  }}
+                />
+
+                {/* Vignette */}
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.35)_100%)]
+                  "
+                />
+
+                {/* Corner brackets */}
+
+                <CornerBrackets />
+
+                {/* Arrow */}
+
+                <div
+                  className="
+                    absolute
+                    left-4
+                    top-4
+                    z-20
+                    flex
+                    h-9
+                    w-9
+                    items-center
+                    justify-center
+                    rounded-full
+                    text-white
+                    shadow-lg
+                    transition-transform
+                    duration-300
+                    group-hover:scale-110
+                    sm:left-6
+                    sm:top-6
+                    sm:h-11
+                    sm:w-11
+                  "
+                  style={{
+                    backgroundColor: BRAND,
+                  }}
+                >
+                  <ArrowUpLeft className="h-4 w-4 sm:h-5 sm:w-5" />
+                </div>
+
+                {/* Small label */}
+
+                <div
+                  className="
+                    absolute
+                    right-4
+                    top-5
+                    z-20
+                    font-mono
+                    text-[8px]
+                    tracking-[0.15em]
+                    text-white/45
+                    sm:right-6
+                    sm:top-7
+                    sm:text-[9px]
+                  "
+                >
+                  EDARAH / 01
+                </div>
+
+                {/* Bottom content */}
+
+                <div
+                  className="
+                    absolute
+                    inset-x-5
+                    bottom-5
+                    z-20
+                    text-white
+                    sm:inset-x-7
+                    sm:bottom-7
+                  "
+                >
+                  <span
+                    className="
+                      mb-2
+                      block
+                      text-[9px]
+                      font-bold
+                      tracking-[0.2em]
+                      text-white/50
+                      sm:mb-3
+                      sm:text-[10px]
+                    "
+                  >
+                    SECURITY SERVICES
+                  </span>
+
+                  <h3
+                    className="
+                      text-xl
+                      font-extrabold
+                      leading-[1.25]
+                      sm:text-2xl
+                      md:text-3xl
+                    "
+                  >
+                    حماية تبدأ من
+                    <br />
+                    التفاصيل.
+                  </h3>
+
+                  <p
+                    className="
+                      mt-2
+                      max-w-sm
+                      text-xs
+                      leading-6
+                      text-white/70
+                      sm:mt-4
+                      sm:text-sm
+                      sm:leading-7
+                    "
+                  >
+                    نعمل وفق منهجيات تشغيل واضحة تضمن بيئة آمنة ومستقرة
+                    لعملائنا.
+                  </p>
+                </div>
               </div>
-
-              <h3 className="mb-5 text-2xl font-black">الرؤية</h3>
-
-              <p className="max-w-xl text-sm leading-8 text-white/40">
-                أن نكون الخيار الأمني الأول للمنشآت والمؤسسات في المملكة، من
-                خلال منظومة حماية تجمع بين الانضباط المؤسسي والكفاءة التشغيلية
-                العالية.
-              </p>
-            </div>
-
-            {/* Mission */}
-
-            <div className="p-8 sm:p-12">
-              <div className="mb-8 flex items-center justify-between">
-                <span className="font-mono text-[10px] tracking-[0.2em] text-[#98252b]">
-                  02 / MISSION
-                </span>
-
-                <Award className="h-5 w-5 text-white/20" />
-              </div>
-
-              <h3 className="mb-5 text-2xl font-black">الرسالة</h3>
-
-              <p className="max-w-xl text-sm leading-8 text-white/40">
-                نقدم حلول أمنية متكاملة ومصممة لاحتياجات كل عميل، معتمدين على
-                كوادر مؤهلة، ومنهجيات تشغيل واضحة، وأنظمة مراقبة وتقنية حديثة،
-                بما يضمن بيئة آمنة ومستقرة تمكن عملاءنا من التركيز على أعمالهم
-                دون قلق.
-              </p>
-            </div>
-          </div>
+            </Card>
+          </motion.div>
         </motion.div>
 
-        {/* =====================================================
+        {/* =========================================================
+            VISION / MISSION
+        ========================================================== */}
+
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{
+            once: true,
+            margin: "-60px",
+          }}
+          className="
+            mt-4
+            grid
+            grid-cols-1
+            gap-4
+            sm:mt-5
+            sm:gap-5
+            md:mt-6
+            md:gap-6
+            lg:grid-cols-2
+          "
+        >
+          {/* Vision */}
+
+          <motion.div variants={reveal}>
+            <Card
+              className="
+                h-full
+                rounded-[22px]
+                border-black/[0.04]
+                bg-white
+                shadow-[0_8px_30px_rgba(0,0,0,0.02)]
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                motion-reduce:hover:translate-y-0
+                sm:rounded-[28px]
+              "
+            >
+              <CardContent className="p-5 sm:p-7 md:p-9">
+                <div className="mb-5 flex items-center justify-between sm:mb-7">
+                  <div
+                    className="
+                      flex
+                      h-10
+                      w-10
+                      items-center
+                      justify-center
+                      rounded-full
+                      sm:h-11
+                      sm:w-11
+                    "
+                    style={{
+                      backgroundColor: `${BRAND}12`,
+                      color: BRAND,
+                    }}
+                  >
+                    <Target className="h-4.5 w-4.5 sm:h-5 sm:w-5" />
+                  </div>
+
+                  <span className="text-xs font-bold tracking-widest text-black/20">
+                    02
+                  </span>
+                </div>
+
+                <h3 className="mb-3 text-xl font-extrabold text-[#1c1c1c] sm:mb-4 sm:text-2xl">
+                  الرؤية
+                </h3>
+
+                <p className="max-w-xl text-sm leading-6 text-black/50 sm:text-[15px] sm:leading-7 md:text-base">
+                  أن نكون الخيار الأمني الأول للمنشآت والمؤسسات في المملكة، من
+                  خلال منظومة حماية تجمع بين الانضباط المؤسسي والكفاءة التشغيلية
+                  العالية.
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* Mission */}
+
+          <motion.div variants={reveal}>
+            <Card
+              className="
+                h-full
+                rounded-[22px]
+                border-black/[0.04]
+                bg-[#1c1c1c]
+                text-white
+                shadow-[0_8px_30px_rgba(0,0,0,0.05)]
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                motion-reduce:hover:translate-y-0
+                sm:rounded-[28px]
+              "
+            >
+              <CardContent className="p-5 sm:p-7 md:p-9">
+                <div className="mb-5 flex items-center justify-between sm:mb-7">
+                  <div
+                    className="
+                      flex
+                      h-10
+                      w-10
+                      items-center
+                      justify-center
+                      rounded-full
+                      text-white
+                      sm:h-11
+                      sm:w-11
+                    "
+                    style={{
+                      backgroundColor: BRAND,
+                    }}
+                  >
+                    <Award className="h-4.5 w-4.5 sm:h-5 sm:w-5" />
+                  </div>
+
+                  <span className="text-xs font-bold tracking-widest text-white/20">
+                    03
+                  </span>
+                </div>
+
+                <h3 className="mb-3 text-xl font-extrabold sm:mb-4 sm:text-2xl">
+                  الرسالة
+                </h3>
+
+                <p className="max-w-xl text-sm leading-6 text-white/55 sm:text-[15px] sm:leading-7 md:text-base">
+                  نقدم حلول أمنية متكاملة ومصممة لاحتياجات كل عميل، معتمدين على
+                  كوادر مؤهلة، ومنهجيات تشغيل واضحة، وأنظمة مراقبة وتقنية حديثة،
+                  بما يضمن بيئة آمنة ومستقرة تمكن عملاءنا من التركيز على أعمالهم
+                  دون قلق.
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </motion.div>
+
+        {/* =========================================================
             VALUES
-        ====================================================== */}
+        ========================================================== */}
 
         <motion.div
           variants={reveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
-          className="mt-32"
+          viewport={{
+            once: true,
+          }}
+          className="mt-12 sm:mt-16 md:mt-20"
         >
-          {/* Header */}
+          {/* Values header */}
 
-          <div className="mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+          <div
+            className="
+              mb-6
+              flex
+              flex-col
+              gap-3
+              sm:mb-8
+              sm:gap-4
+              md:flex-row
+              md:items-end
+              md:justify-between
+            "
+          >
             <div>
-              <div className="mb-5 flex items-center gap-3">
-                <span className="h-px w-10 bg-[#98252b]" />
+              <div className="mb-3 flex items-center gap-3 sm:mb-4">
+                <span
+                  className="h-1 w-8 rounded-full"
+                  style={{
+                    backgroundColor: BRAND,
+                  }}
+                />
 
-                <span className="font-mono text-[10px] tracking-[0.2em] text-white/25">
+                <span
+                  className="
+                    text-xs
+                    font-bold
+                    tracking-[0.15em]
+                  "
+                  style={{
+                    color: BRAND,
+                  }}
+                >
                   EDARAH / VALUES
                 </span>
               </div>
 
-              <h3 className="text-4xl font-black sm:text-5xl">
-                القيم التي
-                <span className="text-white/30"> تقودنا.</span>
+              <h3
+                className="
+                  text-[clamp(1.75rem,4.5vw,3rem)]
+                  font-black
+                  tracking-tight
+                  text-[#1c1c1c]
+                "
+              >
+                القيم التي تقودنا.
               </h3>
             </div>
 
-            <p className="max-w-xs text-sm leading-7 text-white/30">
-              مبادئ أساسية تشكل طريقة عملنا وعلاقتنا بعملائنا وفرقنا.
+            <p className="max-w-md text-sm leading-6 text-black/45 sm:leading-7">
+              مبادئ راسخة تشكل طريقة عملنا، وتحدد مستوى الخدمة التي نقدمها
+              لعملائنا.
             </p>
           </div>
 
@@ -363,76 +847,143 @@ export default function EdarahAboutSection() {
             variants={stagger}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
-            className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5"
+            viewport={{
+              once: true,
+              margin: "-40px",
+            }}
+            className="
+              grid
+              grid-cols-2
+              gap-3
+              sm:gap-4
+              md:grid-cols-3
+              xl:grid-cols-5
+            "
           >
-            {values.map((value, index) => {
+            {values.map((value) => {
               const Icon = value.icon;
 
               return (
-                <motion.div key={value.id} variants={reveal}>
+                <motion.div
+                  key={value.id}
+                  variants={reveal}
+                  className="
+                    col-span-2
+                    sm:col-span-1
+                    first:col-span-2
+                    sm:first:col-span-1
+                  "
+                >
                   <Card
-                    className={cn(
-                      `
-                      group relative h-full overflow-hidden
-                      rounded-none
-                      border-white/[0.08]
-                      bg-white/[0.02]
-                      shadow-none
+                    className="
+                      group
+                      relative
+                      h-full
+                      min-h-[190px]
+                      overflow-hidden
+                      rounded-[18px]
+                      border-black/[0.04]
+                      bg-white
+                      shadow-[0_8px_30px_rgba(0,0,0,0.02)]
                       transition-all
                       duration-500
-                      hover:-translate-y-2
-                      hover:border-[#98252b]/40
-                      hover:bg-white/[0.045]
-                      `,
-                      index === 0 && "lg:col-span-1",
-                    )}
+                      hover:-translate-y-1.5
+                      hover:shadow-[0_20px_45px_rgba(0,0,0,0.06)]
+                      motion-reduce:hover:translate-y-0
+                      sm:min-h-[250px]
+                      sm:rounded-[26px]
+                    "
                   >
-                    <CardContent className="relative flex h-full min-h-[300px] flex-col p-7">
-                      {/* Number */}
+                    <CornerBrackets
+                      color={BRAND}
+                      className="
+                        opacity-0
+                        transition-opacity
+                        duration-500
+                        group-hover:opacity-100
+                      "
+                    />
+
+                    <CardContent className="flex h-full flex-col p-4 sm:p-6">
+                      {/* Top */}
 
                       <div className="flex items-start justify-between">
-                        <span className="font-mono text-[10px] text-white/20">
+                        <span className="text-xs font-bold tracking-widest text-black/20">
                           {value.id}
                         </span>
 
                         <div
                           className="
-                            flex h-10 w-10 items-center justify-center
-                            border border-white/[0.08]
-                            text-white/30
-                            transition-all duration-500
-                            group-hover:border-[#98252b]
-                            group-hover:bg-[#98252b]
+                            flex
+                            h-10
+                            w-10
+                            items-center
+                            justify-center
+                            rounded-full
+                            bg-[#f5f5f3]
+                            transition-all
+                            duration-300
+                            group-hover:bg-[#5E1E2B]
                             group-hover:text-white
+                            sm:h-11
+                            sm:w-11
                           "
+                          style={{
+                            color: BRAND,
+                          }}
                         >
-                          <Icon className="h-4 w-4" strokeWidth={1.5} />
+                          <Icon
+                            className="h-4.5 w-4.5 sm:h-5 sm:w-5"
+                            strokeWidth={1.6}
+                          />
                         </div>
                       </div>
 
                       {/* Content */}
 
-                      <div className="mt-auto">
-                        <h4 className="mb-4 text-lg font-extrabold">
+                      <div className="mt-auto pt-5 sm:pt-6">
+                        <h4
+                          className="
+                            mb-1.5
+                            text-base
+                            font-extrabold
+                            text-[#1c1c1c]
+                            sm:mb-2
+                            sm:text-xl
+                          "
+                        >
                           {value.title}
                         </h4>
 
-                        <p className="text-xs leading-7 text-white/35">
+                        <p
+                          className="
+                            text-[12.5px]
+                            leading-5
+                            text-black/45
+                            sm:text-sm
+                            sm:leading-6
+                          "
+                        >
                           {value.desc}
                         </p>
                       </div>
 
-                      {/* Bottom accent */}
+                      {/* Bottom hover line */}
 
                       <div
                         className="
-                          absolute bottom-0 right-0
-                          h-[2px] w-0
-                          bg-[#98252b]
-                          transition-all duration-500
+                          absolute
+                          bottom-0
+                          right-0
+                          h-1
+                          w-0
+                          transition-all
+                          duration-500
                           group-hover:w-full
                         "
+                        style={{
+                          backgroundColor: BRAND,
+                        }}
                       />
                     </CardContent>
                   </Card>
@@ -442,26 +993,46 @@ export default function EdarahAboutSection() {
           </motion.div>
         </motion.div>
 
-        {/* =====================================================
-            FINAL STATEMENT
-        ====================================================== */}
+        {/* =========================================================
+            FOOTER STATEMENT
+        ========================================================== */}
 
         <motion.div
           variants={reveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
-          className="mt-20 flex flex-col gap-6 border-t border-white/[0.08] pt-8 sm:flex-row sm:items-center sm:justify-between"
+          viewport={{
+            once: true,
+          }}
+          className="
+            mt-10
+            flex
+            flex-col
+            gap-3
+            border-t
+            border-black/10
+            pt-5
+            sm:mt-12
+            sm:flex-row
+            sm:items-center
+            sm:justify-between
+            sm:pt-6
+          "
         >
-          <div className="flex items-center gap-3">
-            <Check className="h-4 w-4 text-[#98252b]" />
+          <div className="flex items-center gap-2">
+            <span
+              className="h-2 w-2 rounded-full"
+              style={{
+                backgroundColor: BRAND,
+              }}
+            />
 
-            <span className="text-xs text-white/30">
+            <span className="text-xs font-medium text-black/40">
               حماية تُدار باحترافية.
             </span>
           </div>
 
-          <span className="font-mono text-[10px] tracking-[0.2em] text-white/15">
+          <span className="text-[10px] font-bold tracking-[0.2em] text-black/20">
             EDARAH SECURITY SERVICES
           </span>
         </motion.div>

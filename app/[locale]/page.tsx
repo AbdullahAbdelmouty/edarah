@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <EdarahAboutSection />
       <WhyUsStatsSection />
+      <EdarahAboutSection />
       <EdarahServicesSection />
       <EdarahSectorsSection />
       <EdarahMechanismSection />
