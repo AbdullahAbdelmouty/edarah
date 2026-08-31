@@ -33,7 +33,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen bg-[#f5f5f3] px-2 md:px-3 overflow-hidden"
+      className="relative  min-h-screen bg-[#f5f5f3] px-2 md:px-3 overflow-hidden"
       dir="rtl"
     >
       {/* =========================================================
