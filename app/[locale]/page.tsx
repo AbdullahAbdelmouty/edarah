@@ -3,7 +3,7 @@ import WhyUsStatsSection from "@/components/website/sections/WhyUsStatsSection";
 import EdarahServicesSection from "@/components/website/sections/EdarahServicesSection";
 import EdarahSectorsSection from "@/components/website/sections/EdarahSectorsSection";
 import EdarahMechanismSection from "@/components/website/sections/HowWeWorkSection";
-
+import EdarahContactSection from "@/components/website/sections/Edarahcontactsection";
 export default function Home() {
   return (
     <>
@@ -12,6 +12,7 @@ export default function Home() {
       <EdarahServicesSection />
       <EdarahSectorsSection />
       <EdarahMechanismSection />
+      <EdarahContactSection />
     </>
   );
 }
