@@ -48,7 +48,7 @@ export default function WhyUsStatsSection() {
   return (
     <section
       dir="rtl"
-      className="relative w-full overflow-hidden bg-[#f5f5f3] px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:py-24"
+      className="relative w-full overflow-hidden bg-[#f5f5f3] px-4 py-12 sm:px-6 sm:py-14 md:px-8 md:py-16 lg:py-18"
     >
       {/* Background texture — matches EdarahAboutSection */}
       <div className="pointer-events-none absolute inset-0">
@@ -190,7 +190,7 @@ export default function WhyUsStatsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 gap-x-6 gap-y-6 border-t border-black/10 pt-8 sm:gap-6 sm:pt-9 md:grid-cols-4 md:pt-10"
+          className="grid grid-cols-2 gap-x-6 gap-y-6 border-t border-b border-black/10 py-8 sm:gap-6 md:grid-cols-4 md:py-10"
         >
           {kpis.map((kpi, i) => {
             const Icon = kpi.icon;

@@ -33,7 +33,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative  min-h-screen bg-[#f5f5f3] px-2 md:px-3 overflow-hidden"
+      className="relative pt-4  min-h-screen bg-[#f5f5f3] px-2 md:px-3 overflow-hidden"
       dir="rtl"
     >
       {/* =========================================================
@@ -429,7 +429,7 @@ export default function HeroSection() {
         {/* =======================================================
             WHATSAPP
         ======================================================= */}
-        <div
+        {/* <div
           className="
             absolute
             bottom-7
@@ -484,7 +484,7 @@ export default function HeroSection() {
               "
             />
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

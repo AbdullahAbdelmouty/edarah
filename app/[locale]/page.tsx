@@ -5,6 +5,7 @@ import EdarahSectorsSection from "@/components/website/sections/EdarahSectorsSec
 import EdarahMechanismSection from "@/components/website/sections/HowWeWorkSection";
 import EdarahContactSection from "@/components/website/sections/Edarahcontactsection";
 import EdarahAboutSection from "@/components/website/sections/EdarahAboutSection";
+import EdarahPartnersSection from "@/components/website/sections/Edarahpartnerssection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <HeroSection />
       <WhyUsStatsSection />
       <EdarahAboutSection />
+      <EdarahPartnersSection />
       <EdarahServicesSection />
       <EdarahSectorsSection />
       <EdarahMechanismSection />
