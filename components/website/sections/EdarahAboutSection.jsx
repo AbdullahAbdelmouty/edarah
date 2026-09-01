@@ -86,13 +86,7 @@ export default function EdarahAboutSection() {
         w-full
         overflow-hidden
         bg-[#f5f5f3]
-        px-4
-        py-14
-        sm:px-6
-        sm:py-16
-        md:px-8
-        md:py-20
-        lg:py-24
+       px-4 sm:px-6 md:px-8 
       "
     >
       {/* =========================================================
@@ -991,50 +985,6 @@ export default function EdarahAboutSection() {
               );
             })}
           </motion.div>
-        </motion.div>
-
-        {/* =========================================================
-            FOOTER STATEMENT
-        ========================================================== */}
-
-        <motion.div
-          variants={reveal}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{
-            once: true,
-          }}
-          className="
-            mt-10
-            flex
-            flex-col
-            gap-3
-            border-t
-            border-black/10
-            pt-5
-            sm:mt-12
-            sm:flex-row
-            sm:items-center
-            sm:justify-between
-            sm:pt-6
-          "
-        >
-          <div className="flex items-center gap-2">
-            <span
-              className="h-2 w-2 rounded-full"
-              style={{
-                backgroundColor: BRAND,
-              }}
-            />
-
-            <span className="text-xs font-medium text-black/40">
-              حماية تُدار باحترافية.
-            </span>
-          </div>
-
-          <span className="text-[10px] font-bold tracking-[0.2em] text-black/20">
-            EDARAH SECURITY SERVICES
-          </span>
         </motion.div>
       </div>
     </section>
