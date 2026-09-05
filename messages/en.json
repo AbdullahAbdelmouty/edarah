@@ -24,16 +24,22 @@
   "WhyUs": {
     "badge": "Why Choose Us?",
     "title": "In a market where security services appear identical on the surface, the difference is made by what lies beneath.",
-    "description": "This is what Edarah Security Services builds at every site we manage: institutional discipline, continuously trained personnel, customized solutions, rapid response, and operational excellence.",
+    "description_intro": "At every site we manage, we deliver an integrated security ecosystem featuring:",
+    "feature_1": "Continuously trained & certified personnel",
+    "feature_2": "Tailored solutions for every facility",
+    "feature_3": "Rapid response & operational discipline",
+    "stats_section_title": "Edarah in Numbers",
+    "card1_tag": "Delivered Contracts",
     "card1_title": "Successfully Executed Contracts",
     "card1_desc": "Comprehensive security coverage for diverse clients across commercial, industrial, residential, and government sectors.",
+    "card2_tag": "Sustainable Trust",
     "card2_title": "Clients Trust Our Services",
     "card2_desc": "We build long-term relationships with our clients based on mutual trust and a deep understanding of their needs.",
     "image_title": "High Operational Discipline",
     "image_desc": "Our personnel adhere to unified uniforms and strict behavioral standards, reflecting a professional image worthy of our clients' trust.",
-    "stat1_text": "Years of Experience",
+    "stat1_text": "Years of Industry Experience",
     "stat2_text": "Qualified Security & Admin Staff",
-    "stat3_text": "Major Cities Covered",
-    "stat4_text": "Security Coverage & Monitoring"
+    "stat3_text": "Major Cities Across the Kingdom",
+    "stat4_text": "Round-the-Clock Security & Monitoring"
   }
 }
