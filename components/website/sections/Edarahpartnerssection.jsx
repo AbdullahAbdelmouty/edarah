@@ -26,14 +26,14 @@ const rowOne = [
   { name: "هامات", logo: "/partners/hamat.png" },
   { name: "التعاونية", logo: "/partners/tawuniya.png" },
   { name: "بنك الرياض", logo: "/partners/riyad-bank.png" },
-  { name: "بنك البلاد", logo: null },
+  // { name: "بنك البلاد", logo: null },
 ];
 
 const rowTwo = [
   { name: "تيرا مول", logo: "/partners/tera-mall.png" },
   { name: "الدريس", logo: "/partners/aldrees.png" },
-  { name: "STC", logo: null },
-  { name: "اسمنت أم القرى", logo: null },
+  // { name: "STC", logo: null },
+  // { name: "اسمنت أم القرى", logo: null },
   { name: "ألبان الطائف", logo: "/partners/alban-altaif-dairy.png" },
   { name: "مدينة الورود", logo: "/partners/madinat-alwouroud.png" },
   { name: "دار تاج الهندي", logo: "/partners/dar-taj-indian.png" },
@@ -394,45 +394,6 @@ export default function EdarahPartnersSection() {
           }}
           className="mb-8 sm:mb-10 md:mb-12"
         >
-          {/* Eyebrow */}
-
-          <div className="mb-4 flex items-center gap-3 sm:mb-5">
-            <span
-              className="
-                flex
-                h-7
-                w-7
-                shrink-0
-                items-center
-                justify-center
-                rounded-full
-                text-white
-                sm:h-8
-                sm:w-8
-              "
-              style={{
-                backgroundColor: BRAND,
-              }}
-            >
-              <Handshake className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            </span>
-
-            <span
-              className="
-                text-[11px]
-                font-bold
-                tracking-[0.15em]
-                sm:text-xs
-                md:text-sm
-              "
-              style={{
-                color: BRAND,
-              }}
-            >
-              EDARAH / PARTNERS
-            </span>
-          </div>
-
           {/* Heading + Description */}
 
           <div

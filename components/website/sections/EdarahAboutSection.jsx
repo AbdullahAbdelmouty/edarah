@@ -21,31 +21,31 @@ const values = [
   {
     id: "01",
     title: "الأمانة",
-    desc: "نتعامل مع أمن منشآت عملائنا وممتلكاتهم بمسؤولية تامة، وكأنها ممتلكاتنا الخاصة.",
+    desc: "نتعامل مع أمن منشآت عملائنا وممتلكاتهم بمسؤولية تامة.",
     icon: ShieldCheck,
   },
   {
     id: "02",
     title: "الانضباط",
-    desc: "نلتزم بأعلى معايير التشغيل والحوكمة في كل موقع نديره.",
+    desc: "نلتزم بأعلى معايير التشغيل والحوكمة في كل موقع نديره بدقة واحترافية.",
     icon: Target,
   },
   {
     id: "03",
     title: "الاحترافية",
-    desc: "نستثمر في تأهيل كوادرنا الأمنية باستمرار لضمان جاهزية ميدانية عالية.",
+    desc: "نستثمر في تأهيل كوادرنا الأمنية باستمرار لضمان أعلى درجات الجاهزية الميدانية.",
     icon: Award,
   },
   {
     id: "04",
     title: "الاستجابة السريعة",
-    desc: "ندرك أن الأمن الحقيقي يُقاس بسرعة التعامل مع الطوارئ، لا فقط بالوجود الروتيني.",
+    desc: "ندرك أن الأمن الحقيقي يُقاس بسرعة التعامل الفعّال مع مختلف الحالات.",
     icon: Zap,
   },
   {
     id: "05",
     title: "الشراكة",
-    desc: "نبني علاقات طويلة الأمد مع عملائنا مبنية على الثقة المتبادلة والفهم العميق لاحتياجاتهم.",
+    desc: "نبني علاقات طويلة الأمد مع عملائنا قائمة على الثقة المتبادلة والفهم.",
     icon: Handshake,
   },
 ];
@@ -85,7 +85,7 @@ export default function EdarahAboutSection() {
         relative
         w-full
         overflow-hidden
-        bg-[#f5f5f3]
+        bg-[#FBFBFA]
        px-4 sm:px-6 md:px-8 
       "
     >
@@ -155,92 +155,27 @@ export default function EdarahAboutSection() {
           }}
           className="mb-8 sm:mb-10 md:mb-12"
         >
-          {/* Eyebrow */}
+          {/* Heading */}
 
-          <div className="mb-4 flex items-center gap-3 sm:mb-5">
-            <span
+          <div>
+            <h2
               className="
-                flex
-                h-7
-                w-7
-                shrink-0
-                items-center
-                justify-center
-                rounded-full
-                text-white
-                sm:h-8
-                sm:w-8
+                text-[clamp(2rem,6vw,4rem)]
+                font-black
+                leading-[1.12]
+                tracking-tight
+                text-[#1c1c1c]
               "
+            >
+              من نحن
+            </h2>
+
+            <div
+              className="mt-4 h-[3px] w-12 sm:mt-6 sm:w-14"
               style={{
                 backgroundColor: BRAND,
               }}
-            >
-              <ShieldCheck className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            </span>
-
-            <span
-              className="
-                text-[11px]
-                font-bold
-                tracking-[0.15em]
-                sm:text-xs
-                md:text-sm
-              "
-              style={{
-                color: BRAND,
-              }}
-            >
-              EDARAH / ABOUT
-            </span>
-          </div>
-
-          {/* Heading + intro */}
-
-          <div
-            className="
-              grid
-              gap-5
-              sm:gap-8
-              lg:grid-cols-[1fr_420px]
-              lg:items-end
-            "
-          >
-            <div>
-              <h2
-                className="
-                  text-[clamp(2rem,6vw,4rem)]
-                  font-black
-                  leading-[1.12]
-                  tracking-tight
-                  text-[#1c1c1c]
-                "
-              >
-                من نحن
-              </h2>
-
-              <div
-                className="mt-4 h-[3px] w-12 sm:mt-6 sm:w-14"
-                style={{
-                  backgroundColor: BRAND,
-                }}
-              />
-            </div>
-
-            <p
-              className="
-                max-w-lg
-                text-sm
-                leading-6
-                text-black/55
-                sm:text-[15px]
-                sm:leading-8
-                md:text-base
-              "
-            >
-              شركة متخصصة في تقديم الخدمات الأمنية المتكاملة للقطاعين العام
-              والخاص، من خلال منظومة تجمع بين الكفاءة التشغيلية، الكوادر
-              المؤهلة، والتقنيات الحديثة.
-            </p>
+            />
           </div>
         </motion.div>
 
@@ -289,25 +224,22 @@ export default function EdarahAboutSection() {
                   gap-5
                   p-5
                   sm:gap-5
-                  sm:p-5
+                  sm:p-6
                   md:gap-6
-                  md:p-7
-                  lg:p-11
+                  md:p-8
+                  lg:p-10
                 "
               >
                 {/* Top */}
 
-                <div className="flex items-start justify-between">
-                  <span
-                    className="
-                      text-xs
-                      font-bold
-                      tracking-widest
-                      text-black/25
-                    "
+                <div className="flex items-center justify-between">
+                  <div
+                    className="inline-flex items-center gap-2 rounded-full border border-[#5E1E2B]/10 bg-[#5E1E2B]/[0.05] px-3.5 py-1.5 text-xs font-bold"
+                    style={{ color: BRAND }}
                   >
-                    01
-                  </span>
+                    <ShieldCheck className="h-3.5 w-3.5" />
+                    <span>شركة إدارة للخدمات الأمنية</span>
+                  </div>
 
                   <div
                     className="
@@ -337,44 +269,52 @@ export default function EdarahAboutSection() {
                       max-w-xl
                       text-2xl
                       font-extrabold
-                      leading-[1.4]
+                      leading-[1.3]
                       text-[#1c1c1c]
                       sm:text-3xl
                       md:text-4xl
                     "
                   >
-                    شريكك في
+                    إدارة ..{" "}
+                    <span style={{ color: BRAND }}>شريكك الأمني الموثوق</span>
                     <br />
-                    <span className="text-black/30">الأمن والاستقرار.</span>
+                    <span className="text-black/35 font-semibold text-xl sm:text-2xl md:text-3xl">
+                      للأمن والاستقرار.
+                    </span>
                   </h3>
 
                   <div className="my-5 h-px w-full bg-black/[0.07] sm:my-6" />
 
                   <div
                     className="
-                      space-y-3
+                      space-y-4
                       text-sm
-                      leading-6
-                      text-black/55
-                      sm:space-y-4
+                      leading-relaxed
+                      text-black/70
                       sm:text-[15px]
-                      sm:leading-7
+                      sm:leading-8
                       md:text-base
                     "
                   >
-                    <p>
+                    <p className="font-medium text-[#1c1c1c]">
                       شركة متخصصة في تقديم الخدمات الأمنية المتكاملة للقطاعين
                       العام والخاص، تخدم عملاء متنوعين في القطاعات التجارية
                       والصناعية والسكنية والحكومية.
                     </p>
 
-                    <p>
-                      وتتبع الشركة إلى مجموعة العبيكان القابضة، إحدى أبرز
-                      المجموعات الاقتصادية السعودية ذات الحضور الممتد في التطوير
-                      العقاري والمقاولات والتشغيل والاستثمار وإدارة الأملاك.
-                    </p>
+                    <div className="rounded-xl border border-black/[0.06] bg-black/[0.02] p-3.5 sm:p-4">
+                      <p className="text-xs leading-relaxed text-black/65 sm:text-sm">
+                        تتبع الشركة إلى{" "}
+                        <strong className="font-bold text-[#1c1c1c]">
+                          مجموعة العبيكان القابضة
+                        </strong>
+                        ، إحدى أبرز المجموعات الاقتصادية السعودية ذات الحضور
+                        الممتد في التطوير العقاري والمقاولات والتشغيل والاستثمار
+                        وإدارة الأملاك.
+                      </p>
+                    </div>
 
-                    <p>
+                    <p className="text-xs leading-relaxed text-black/60 sm:text-sm">
                       نقدم مجموعة متكاملة من الخدمات التي تشمل الحراسات الأمنية،
                       والمراقبة الإلكترونية، وإدارة المخاطر، إلى جانب برامج
                       تدريب متخصصة لتأهيل كوادرنا الأمنية وفق أعلى المعايير
@@ -405,12 +345,12 @@ export default function EdarahAboutSection() {
                       }}
                     />
 
-                    <span className="text-xs font-medium text-black/40">
+                    <span className="text-xs font-medium text-black/50">
                       منظومة أمنية متكاملة
                     </span>
                   </div>
 
-                  <span className="text-xs font-bold text-black/20">
+                  <span className="text-xs font-bold text-black/30">
                     EDARAH
                   </span>
                 </div>
@@ -448,7 +388,7 @@ export default function EdarahAboutSection() {
                   lg:min-h-[500px]
                 "
               >
-                {/* Image */}
+                {/* Image centered */}
 
                 <Image
                   src="/man3.webp"
@@ -463,8 +403,7 @@ export default function EdarahAboutSection() {
                   "
                   className="
                     object-cover
-                    object-[50%_30%]
-                    grayscale-[10%]
+                    object-[center_15%]
                     transition-transform
                     duration-700
                     ease-out
@@ -542,26 +481,6 @@ export default function EdarahAboutSection() {
                   }}
                 >
                   <ArrowUpLeft className="h-4 w-4 sm:h-5 sm:w-5" />
-                </div>
-
-                {/* Small label */}
-
-                <div
-                  className="
-                    absolute
-                    right-4
-                    top-5
-                    z-20
-                    font-mono
-                    text-[8px]
-                    tracking-[0.15em]
-                    text-white/45
-                    sm:right-6
-                    sm:top-7
-                    sm:text-[9px]
-                  "
-                >
-                  EDARAH / 01
                 </div>
 
                 {/* Bottom content */}
@@ -688,20 +607,16 @@ export default function EdarahAboutSection() {
                   >
                     <Target className="h-4.5 w-4.5 sm:h-5 sm:w-5" />
                   </div>
-
-                  <span className="text-xs font-bold tracking-widest text-black/20">
-                    02
-                  </span>
                 </div>
 
                 <h3 className="mb-3 text-xl font-extrabold text-[#1c1c1c] sm:mb-4 sm:text-2xl">
                   الرؤية
                 </h3>
 
-                <p className="max-w-xl text-sm leading-6 text-black/50 sm:text-[15px] sm:leading-7 md:text-base">
+                <p className="max-w-xl text-sm leading-relaxed text-black/60 sm:text-[15px] sm:leading-8 md:text-base">
                   أن نكون الخيار الأمني الأول للمنشآت والمؤسسات في المملكة، من
-                  خلال منظومة حماية تجمع بين الانضباط المؤسسي والكفاءة التشغيلية
-                  العالية.
+                  خلال منظومة حماية متطورة تجمع بين الانضباط المؤسسي والكفاءة
+                  التشغيلية العالية.
                 </p>
               </CardContent>
             </Card>
@@ -745,17 +660,13 @@ export default function EdarahAboutSection() {
                   >
                     <Award className="h-4.5 w-4.5 sm:h-5 sm:w-5" />
                   </div>
-
-                  <span className="text-xs font-bold tracking-widest text-white/20">
-                    03
-                  </span>
                 </div>
 
-                <h3 className="mb-3 text-xl font-extrabold sm:mb-4 sm:text-2xl">
+                <h3 className="mb-3 text-xl font-extrabold text-white sm:mb-4 sm:text-2xl">
                   الرسالة
                 </h3>
 
-                <p className="max-w-xl text-sm leading-6 text-white/55 sm:text-[15px] sm:leading-7 md:text-base">
+                <p className="max-w-xl text-sm leading-relaxed text-white/75 sm:text-[15px] sm:leading-8 md:text-base">
                   نقدم حلول أمنية متكاملة ومصممة لاحتياجات كل عميل، معتمدين على
                   كوادر مؤهلة، ومنهجيات تشغيل واضحة، وأنظمة مراقبة وتقنية حديثة،
                   بما يضمن بيئة آمنة ومستقرة تمكن عملاءنا من التركيز على أعمالهم
@@ -781,56 +692,20 @@ export default function EdarahAboutSection() {
         >
           {/* Values header */}
 
-          <div
-            className="
-              mb-6
-              flex
-              flex-col
-              gap-3
-              sm:mb-8
-              sm:gap-4
-              md:flex-row
-              md:items-end
-              md:justify-between
-            "
-          >
-            <div>
-              <div className="mb-3 flex items-center gap-3 sm:mb-4">
-                <span
-                  className="h-1 w-8 rounded-full"
-                  style={{
-                    backgroundColor: BRAND,
-                  }}
-                />
+          <div className="mb-6 flex flex-col items-start gap-2 sm:mb-8">
+            <h3
+              className="
+                text-[clamp(1.75rem,4.5vw,2.75rem)]
+                font-black
+                tracking-tight
+                text-[#1c1c1c]
+              "
+            >
+              القيم
+            </h3>
 
-                <span
-                  className="
-                    text-xs
-                    font-bold
-                    tracking-[0.15em]
-                  "
-                  style={{
-                    color: BRAND,
-                  }}
-                >
-                  EDARAH / VALUES
-                </span>
-              </div>
-
-              <h3
-                className="
-                  text-[clamp(1.75rem,4.5vw,3rem)]
-                  font-black
-                  tracking-tight
-                  text-[#1c1c1c]
-                "
-              >
-                القيم التي تقودنا.
-              </h3>
-            </div>
-
-            <p className="max-w-md text-sm leading-6 text-black/45 sm:leading-7">
-              مبادئ راسخة تشكل طريقة عملنا، وتحدد مستوى الخدمة التي نقدمها
+            <p className="max-w-2xl text-sm leading-relaxed text-black/55 sm:text-base">
+              مبادئ راسخة تشكل طريقة عملنا، وترتقي بمستوى الخدمة التي نقدمها
               لعملائنا.
             </p>
           </div>
@@ -847,45 +722,36 @@ export default function EdarahAboutSection() {
             }}
             className="
               grid
-              grid-cols-2
+              grid-cols-1
               gap-3
-              sm:gap-4
+              sm:grid-cols-2
               md:grid-cols-3
-              xl:grid-cols-5
+              lg:grid-cols-5
+              sm:gap-4
             "
           >
             {values.map((value) => {
               const Icon = value.icon;
 
               return (
-                <motion.div
-                  key={value.id}
-                  variants={reveal}
-                  className="
-                    col-span-2
-                    sm:col-span-1
-                    first:col-span-2
-                    sm:first:col-span-1
-                  "
-                >
+                <motion.div key={value.id} variants={reveal} className="h-full">
                   <Card
                     className="
                       group
                       relative
                       h-full
-                      min-h-[190px]
                       overflow-hidden
-                      rounded-[18px]
-                      border-black/[0.04]
+                      rounded-[20px]
+                      border-black/[0.05]
                       bg-white
-                      shadow-[0_8px_30px_rgba(0,0,0,0.02)]
+                      shadow-[0_4px_20px_rgba(0,0,0,0.02)]
                       transition-all
                       duration-500
                       hover:-translate-y-1.5
-                      hover:shadow-[0_20px_45px_rgba(0,0,0,0.06)]
+                      hover:border-[#5E1E2B]/20
+                      hover:shadow-[0_16px_35px_rgba(94,30,43,0.06)]
                       motion-reduce:hover:translate-y-0
-                      sm:min-h-[250px]
-                      sm:rounded-[26px]
+                      sm:rounded-[24px]
                     "
                   >
                     <CornerBrackets
@@ -898,14 +764,9 @@ export default function EdarahAboutSection() {
                       "
                     />
 
-                    <CardContent className="flex h-full flex-col p-4 sm:p-6">
-                      {/* Top */}
-
-                      <div className="flex items-start justify-between">
-                        <span className="text-xs font-bold tracking-widest text-black/20">
-                          {value.id}
-                        </span>
-
+                    <CardContent className="flex h-full flex-col p-5 sm:p-6">
+                      {/* Top Icon */}
+                      <div className="flex items-center justify-between">
                         <div
                           className="
                             flex
@@ -913,11 +774,11 @@ export default function EdarahAboutSection() {
                             w-10
                             items-center
                             justify-center
-                            rounded-full
+                            rounded-xl
                             bg-[#f5f5f3]
                             transition-all
                             duration-300
-                        
+                            group-hover:bg-[#5E1E2B]
                             group-hover:text-white
                             sm:h-11
                             sm:w-11
@@ -926,36 +787,33 @@ export default function EdarahAboutSection() {
                             color: BRAND,
                           }}
                         >
-                          <Icon
-                            className="h-4.5 w-4.5 sm:h-5 sm:w-5"
-                            strokeWidth={1.6}
-                          />
+                          <Icon className="h-5 w-5" strokeWidth={1.75} />
                         </div>
                       </div>
 
-                      {/* Content */}
-
-                      <div className="mt-auto pt-5 sm:pt-6">
+                      {/* Title — aligned strictly across all cards */}
+                      <div className="mt-4 sm:mt-5">
                         <h4
                           className="
-                            mb-1.5
                             text-base
                             font-extrabold
                             text-[#1c1c1c]
-                            sm:mb-2
-                            sm:text-xl
+                            sm:text-lg
                           "
                         >
                           {value.title}
                         </h4>
 
+                        {/* Description max 2 lines */}
                         <p
                           className="
-                            text-[12.5px]
-                            leading-5
-                            text-black/45
-                            sm:text-sm
+                            mt-2
+                            text-xs
+                            leading-relaxed
+                            text-black/55
+                            sm:text-[13px]
                             sm:leading-6
+                            line-clamp-2
                           "
                         >
                           {value.desc}
@@ -963,7 +821,6 @@ export default function EdarahAboutSection() {
                       </div>
 
                       {/* Bottom hover line */}
-
                       <div
                         className="
                           absolute

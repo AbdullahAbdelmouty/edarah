@@ -127,22 +127,15 @@ export default function EdarahContactSection() {
           transition={{ duration: 0.7 }}
           className="mb-12 flex flex-col items-start md:mb-16"
         >
-          <div className="mb-5 flex items-center gap-3">
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#5E1E2B] text-white">
-              <Mail className="h-4 w-4" />
+          <div className="flex items-center gap-4">
+            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#5E1E2B] text-white shadow-[0_4px_20px_rgba(94,30,43,0.25)]">
+              <Mail className="h-5 w-5" />
             </span>
-            <span className="text-sm font-bold tracking-wide text-[#5E1E2B] md:text-base">
-              تواصل معنا
-            </span>
-          </div>
 
-          <h2 className="max-w-4xl text-3xl font-extrabold leading-[1.3] tracking-tight text-[#1c1c1c] md:text-5xl lg:text-[3.5rem]">
-            منظومتك الأمنية تبدأ من محادثة
-          </h2>
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-black/60 md:text-xl">
-            زوروا موقع عملكم بأمان. فريقنا يقيّم احتياجاتكم الأمنية ويرد عليكم
-            خلال يوم عمل واحد.
-          </p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-none tracking-tight text-[#1c1c1c]">
+              تواصل معنا
+            </h2>
+          </div>
         </motion.div>
 
         {/* =========================== BENTO GRID =========================== */}

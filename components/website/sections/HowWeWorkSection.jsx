@@ -104,8 +104,8 @@ export default function EdarahMechanismSection() {
             <div className="mb-6 flex items-center gap-4">
               <span className="h-px w-12 bg-[#9b252b]" />
 
-              <span className="text-[11px] font-bold tracking-[0.25em] text-white/40">
-                09 / آلية العمل
+              <span className="text-[16px] font-bold tracking-[0.25em] text-white/40">
+                آلية العمل
               </span>
             </div>
 
@@ -118,21 +118,9 @@ export default function EdarahMechanismSection() {
             </h2>
 
             <p className="mt-7 max-w-2xl text-sm leading-8 text-white/45 sm:text-base">
-              تعتمد شركة إدارة للخدمات الأمنية منهجية تشغيلية واضحة الخطوات،
-              تضمن انتقالًا سلسًا من التعاقد إلى التنفيذ الميداني دون فجوات.
+              نعتمد منهجية تشغيلية واضحة الخطوات, لضمن انتقال سلس من التعاقد الى
+              التنفيذ الميداني بلا فجوات.
             </p>
-          </div>
-
-          {/* Header side */}
-
-          <div className="hidden lg:block">
-            <div className="flex h-24 w-24 flex-col justify-between border border-white/10 p-4">
-              <ShieldCheck className="h-5 w-5 text-[#a52a30]" />
-
-              <span className="font-mono text-[11px] text-white/30">
-                ED / 09
-              </span>
-            </div>
           </div>
         </motion.div>
 
@@ -213,21 +201,9 @@ export default function EdarahMechanismSection() {
                       />
 
                       <div className="flex items-start justify-between gap-6">
-                        <div>
-                          <div className="mb-3 flex items-center gap-3">
-                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#a52a30]">
-                              المرحلة {index + 1}
-                            </span>
-
-                            {index === 0 && (
-                              <span className="h-1 w-1 rounded-full bg-white/20" />
-                            )}
-                          </div>
-
-                          <h3 className="text-lg font-extrabold text-white sm:text-xl">
-                            {step.title}
-                          </h3>
-                        </div>
+                        <h3 className="text-lg font-extrabold text-white sm:text-xl">
+                          {step.title}
+                        </h3>
 
                         {/* Arrow */}
 
@@ -328,21 +304,6 @@ export default function EdarahMechanismSection() {
                   للقياس.
                 </p>
               </div>
-            </div>
-
-            {/* Floating page number */}
-
-            <div
-              className="
-                absolute -bottom-5 left-5
-                flex h-20 w-20 items-center justify-center
-                border border-white/10
-                bg-[#0b0c0e]
-                font-mono text-xs
-                text-white/40
-              "
-            >
-              09
             </div>
           </motion.div>
         </div>
