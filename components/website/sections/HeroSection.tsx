@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
 
 import {
   ArrowLeft,
@@ -19,71 +20,35 @@ import {
 const BRAND = "#5E1E2B";
 const BRAND_DARK = "#481620";
 const LIGHT_BG = "#FBFBFA";
+const COMPANY_PROFILE_PDF = "/الملف التعريفي انصات.pdf";
 
 // ============================================================
 // SLIDES
 // ============================================================
 
-const slides = [
+const slideContent = [
   {
     id: 1,
     type: "video" as const,
     src: "/hero.mp4",
-
-    eyebrow: "COMMERCIAL EXCELLENCE",
-
-    title: (
-      <>
-        Spotless environments
-        <br />
-        for serious
-        <br />
-        professionals.
-      </>
-    ),
-
-    description:
-      "We maintain premium office and commercial spaces with exacting standards, ensuring your environment reflects the quality of your business.",
-
-    primaryCta: "Request a Consultation",
-    secondaryCta: "View Our Services",
-    thirdCta: "Download Proposal",
-
+    copy: "slide1",
     primaryHref: "#contact",
     secondaryHref: "#services",
-
-    showDescription: true,
     showDownload: true,
     showVideoButton: false,
   },
 
-  {
-    id: 2,
-    type: "video" as const,
-    src: "/hero-2.mp4",
+  // {
+  //   id: 2,
+  //   type: "video" as const,
+  //   src: "/hero-2.mp4",
 
-    eyebrow: "ROYAL GREEN IN MOTION",
-
-    title: (
-      <>
-        Spotless environments
-        <br />
-        for serious professionals.
-      </>
-    ),
-
-    description: "",
-
-    primaryCta: "Request a Consultation",
-    secondaryCta: "Video Tour",
-
-    primaryHref: "#contact",
-    secondaryHref: "#",
-
-    showDescription: false,
-    showDownload: false,
-    showVideoButton: true,
-  },
+  //   copy: "slide2",
+  //   primaryHref: "#contact",
+  //   secondaryHref: "#",
+  //   showDownload: false,
+  //   showVideoButton: true,
+  // },
 ];
 
 // ============================================================
@@ -137,12 +102,14 @@ const itemVariants: Variants = {
 // ============================================================
 
 export default function Hero() {
+  const t = useTranslations("Hero");
+  const isRtl = useLocale() === "ar";
   const [activeSlide, setActiveSlide] = useState(0);
   const [isMuted, setIsMuted] = useState(true);
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const currentSlide = slides[activeSlide];
+  const currentSlide = slideContent[activeSlide];
 
   // ============================================================
   // NEXT SLIDE
@@ -150,7 +117,7 @@ export default function Hero() {
 
   const nextSlide = () => {
     setActiveSlide((current) =>
-      current === slides.length - 1 ? 0 : current + 1,
+      current === slideContent.length - 1 ? 0 : current + 1,
     );
   };
 
@@ -160,7 +127,7 @@ export default function Hero() {
 
   const previousSlide = () => {
     setActiveSlide((current) =>
-      current === 0 ? slides.length - 1 : current - 1,
+      current === 0 ? slideContent.length - 1 : current - 1,
     );
   };
 
@@ -199,7 +166,8 @@ export default function Hero() {
 
   return (
     <section
-      dir="rtl"
+      id="home"
+      dir={t("direction")}
       className="relative min-h-screen overflow-hidden bg-[#FBFBFA] "
     >
       {/* ========================================================
@@ -235,6 +203,7 @@ export default function Hero() {
               ref={videoRef}
               key={currentSlide.id}
               autoPlay
+              loop
               muted={isMuted}
               playsInline
               preload="metadata"
@@ -347,8 +316,9 @@ export default function Hero() {
             min-h-[calc(100vh-12px)]
             flex-col
             justify-between
-            px-6
+            px-4
             py-7
+            sm:px-6
             md:px-12
             md:py-10
             lg:px-16
@@ -360,9 +330,9 @@ export default function Hero() {
               flex
               flex-1
               items-center
-              pb-24
+              pb-12
+              sm:pb-24
               md:items-end
-              md:pb-24
             "
           >
             <div className="flex h-full w-full flex-col justify-between gap-8">
@@ -373,7 +343,7 @@ export default function Hero() {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  className="w-full"
+                  className="w-full text-start"
                 >
                   {/* =================================================
                       EYEBROW
@@ -384,6 +354,7 @@ export default function Hero() {
                     className="
                       inline-flex
                       items-center
+                      justify-center
                       rounded-full
                       border
                       px-4
@@ -401,7 +372,7 @@ export default function Hero() {
                       backgroundColor: `${BRAND}B3`,
                     }}
                   >
-                    {currentSlide.eyebrow}
+                    {t(`${currentSlide.copy}.eyebrow`)}
                   </motion.div>
 
                   {/* =================================================
@@ -411,38 +382,47 @@ export default function Hero() {
                   <motion.h1
                     variants={itemVariants}
                     className="
-                      mt-6
+                      mt-9
+                      mx-auto
                       max-w-[950px]
-                      font-serif
-                      text-[clamp(2.8rem,6vw,6.5rem)]
+                      text-[clamp(1.5rem,7.5vw,2.8rem)]
+                      sm:mt-6
+                      sm:mx-0
+                      sm:text-[clamp(2.8rem,6vw,6.5rem)]
                       font-medium
-                      leading-[0.92]
+                      leading-[1.08]
                       tracking-[-0.035em]
+                      whitespace-pre-line
                       text-white
                     "
                   >
-                    {currentSlide.title}
+                    {t(`${currentSlide.copy}.title`)}
                   </motion.h1>
 
                   {/* =================================================
                       DESCRIPTION
                   ================================================= */}
 
-                  {currentSlide.showDescription && (
+                  {activeSlide === 0 && (
                     <motion.p
                       variants={itemVariants}
                       className="
-                        mt-7
+                        mt-9
+                        mx-auto
                         max-w-[680px]
-                        text-sm
-                        leading-7
+                        text-xs
+                        leading-5
                         text-white/75
+                        sm:mt-7
+                        sm:text-sm
+                        sm:leading-7
                         md:text-base
                         md:leading-8
                         lg:text-lg
+                        sm:mx-0
                       "
                     >
-                      {currentSlide.description}
+                      {t(`${currentSlide.copy}.description`)}
                     </motion.p>
                   )}
 
@@ -453,11 +433,18 @@ export default function Hero() {
                   <motion.div
                     variants={itemVariants}
                     className="
-                      mt-7
+                      mt-9
                       flex
-                      flex-wrap
-                      items-center
+                      w-full
+                      flex-col
+                      items-stretch
                       gap-3
+                      sm:mt-7
+                      sm:w-auto
+                      sm:flex-row
+                      sm:flex-wrap
+                      sm:items-center
+                      sm:gap-3
                       md:mt-9
                       md:gap-4
                     "
@@ -469,12 +456,14 @@ export default function Hero() {
                       className="
                         group
                         inline-flex
+                        w-full
                         items-center
+                        justify-center
                         gap-4
                         rounded-full
                         px-5
-                        py-3
-                        text-sm
+                        py-2
+                        text-xs
                         font-medium
                         text-white
                         shadow-[0_10px_30px_rgba(0,0,0,0.2)]
@@ -484,12 +473,16 @@ export default function Hero() {
                         md:px-6
                         md:py-3.5
                         md:text-base
+                        sm:w-auto
+                        sm:justify-start
+                        sm:py-3
+                        sm:text-sm
                       "
                       style={{
                         backgroundColor: BRAND,
                       }}
                     >
-                      <span>{currentSlide.primaryCta}</span>
+                      <span>{t(`${currentSlide.copy}.primaryCta`)}</span>
 
                       <span
                         className="
@@ -503,11 +496,16 @@ export default function Hero() {
                           transition-transform
                           duration-300
                           group-hover:-translate-x-1
+                          ltr:group-hover:translate-x-1
                           md:h-8
                           md:w-8
                         "
                       >
-                        <ArrowLeft className="h-4 w-4" />
+                        {isRtl ? (
+                          <ArrowLeft className="h-4 w-4" />
+                        ) : (
+                          <ArrowRight className="h-4 w-4" />
+                        )}
                       </span>
                     </a>
 
@@ -517,6 +515,7 @@ export default function Hero() {
                       href={currentSlide.secondaryHref}
                       className="
                         inline-flex
+                        w-full
                         items-center
                         justify-center
                         gap-3
@@ -525,8 +524,8 @@ export default function Hero() {
                         border-white/30
                         bg-white/10
                         px-5
-                        py-3
-                        text-sm
+                        py-2
+                        text-xs
                         text-white
                         backdrop-blur-md
                         transition-all
@@ -536,9 +535,12 @@ export default function Hero() {
                         md:px-7
                         md:py-3.5
                         md:text-base
+                        sm:w-auto
+                        sm:py-3
+                        sm:text-sm
                       "
                     >
-                      {currentSlide.secondaryCta}
+                      {t(`${currentSlide.copy}.secondaryCta`)}
 
                       {currentSlide.showVideoButton && (
                         <Play className="h-4 w-4 fill-current" />
@@ -549,10 +551,10 @@ export default function Hero() {
 
                     {currentSlide.showDownload && (
                       <a
-                        href="/proposal.pdf"
-                        download
+                        href={COMPANY_PROFILE_PDF}
+                        download="Edarah-Company-Profile.pdf"
                         className="
-                          hidden
+                          inline-flex
                           items-center
                           justify-center
                           gap-3
@@ -561,18 +563,21 @@ export default function Hero() {
                           border-white/25
                           bg-white/5
                           px-6
-                          py-3.5
-                          text-sm
+                          py-2
+                          text-xs
                           text-white
                           backdrop-blur-md
                           transition-all
                           duration-300
                           hover:border-white/40
                           hover:bg-white/15
-                          lg:inline-flex
+                          w-full
+                          sm:w-auto
+                          sm:py-3.5
+                          sm:text-sm
                         "
                       >
-                        <span>{currentSlide.thirdCta}</span>
+                        <span>{t("download_proposal")}</span>
 
                         <Download className="h-4 w-4" />
                       </a>
@@ -589,8 +594,9 @@ export default function Hero() {
                 className="
                   flex
                   items-center
-                  justify-between
+                  justify-center
                   gap-5
+                  sm:justify-between
                 "
               >
                 {/* LEFT CONTROLS */}
@@ -601,13 +607,14 @@ export default function Hero() {
                   <button
                     type="button"
                     onClick={previousSlide}
-                    aria-label="Previous slide"
+                    aria-label={t("previous_slide")}
                     className="
-                      flex
+                      hidden
                       h-11
                       w-11
                       items-center
                       justify-center
+                      sm:flex
                       rounded-full
                       border
                       border-white/25
@@ -620,18 +627,22 @@ export default function Hero() {
                       hover:bg-white/20
                     "
                   >
-                    <ArrowRight className="h-4 w-4" />
+                    {isRtl ? (
+                      <ArrowRight className="h-4 w-4" />
+                    ) : (
+                      <ArrowLeft className="h-4 w-4" />
+                    )}
                   </button>
 
                   {/* INDICATORS */}
 
                   <div className="flex items-center gap-2 px-1">
-                    {slides.map((slide, index) => (
+                    {slideContent.map((slide, index) => (
                       <button
                         key={slide.id}
                         type="button"
                         onClick={() => setActiveSlide(index)}
-                        aria-label={`Go to slide ${index + 1}`}
+                        aria-label={t("go_to_slide", { number: index + 1 })}
                         className="
                           relative
                           h-1.5
@@ -664,13 +675,14 @@ export default function Hero() {
                   <button
                     type="button"
                     onClick={nextSlide}
-                    aria-label="Next slide"
+                    aria-label={t("next_slide")}
                     className="
-                      flex
+                      hidden
                       h-11
                       w-11
                       items-center
                       justify-center
+                      sm:flex
                       rounded-full
                       border
                       border-white/25
@@ -683,7 +695,11 @@ export default function Hero() {
                       hover:bg-white/20
                     "
                   >
-                    <ArrowLeft className="h-4 w-4" />
+                    {isRtl ? (
+                      <ArrowLeft className="h-4 w-4" />
+                    ) : (
+                      <ArrowRight className="h-4 w-4" />
+                    )}
                   </button>
                 </div>
 
@@ -694,13 +710,14 @@ export default function Hero() {
                 <button
                   type="button"
                   onClick={toggleMute}
-                  aria-label={isMuted ? "Unmute video" : "Mute video"}
+                  aria-label={isMuted ? t("unmute_video") : t("mute_video")}
                   className="
-                    flex
+                    hidden
                     h-11
                     w-11
                     items-center
                     justify-center
+                    sm:flex
                     rounded-full
                     border
                     border-white/30

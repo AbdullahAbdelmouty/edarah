@@ -1,23 +1,17 @@
 import HeroSection from "@/components/website/sections/HeroSection";
-import WhyUsStatsSection from "@/components/website/sections/WhyUsStatsSection";
-import EdarahServicesSection from "@/components/website/sections/EdarahServicesSection";
-import EdarahSectorsSection from "@/components/website/sections/EdarahSectorsSection";
-import EdarahMechanismSection from "@/components/website/sections/HowWeWorkSection";
-import EdarahContactSection from "@/components/website/sections/Edarahcontactsection";
-import EdarahAboutSection from "@/components/website/sections/EdarahAboutSection";
-import EdarahPartnersSection from "@/components/website/sections/Edarahpartnerssection";
+import PeopleQualitySection from "@/components/website/sections/PeopleQualitySection";
+import SpecializedEnvironmentsSection from "@/components/website/sections/SpecializedEnvironmentsSection";
+import Proposaldownload from "@/components/website/sections/Proposaldownload";
+import CallToAction from "@/components/website/sections/CallToAction";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <WhyUsStatsSection />
-      <EdarahAboutSection />
-      <EdarahPartnersSection />
-      <EdarahServicesSection />
-      <EdarahSectorsSection />
-      <EdarahMechanismSection />
-      <EdarahContactSection />
+      <PeopleQualitySection />
+      <SpecializedEnvironmentsSection />
+      <Proposaldownload />
+      <CallToAction />
     </>
   );
 }
