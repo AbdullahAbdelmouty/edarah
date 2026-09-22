@@ -3,20 +3,37 @@
     "nav_home": "Home",
     "nav_about": "About",
     "nav_services": "Services",
-    "nav_sectors": "Sectors",
-    "nav_clients": "Partners",
+    "nav_carrer": "Carrer",
     "contact_us": "Contact Us",
+    "open_menu": "Open menu",
+    "close_menu": "Close menu",
+    "mobile_navigation": "Mobile navigation",
     "privacy_policy": "Privacy Policy",
     "terms_of_service": "Terms of Service",
     "copyright": "© {year} Edarah Security Services",
     "switch_lang": "العربية"
   },
   "Hero": {
-    "eyebrow": "Integrated Security Solutions",
-    "title": "We Innovate Protection, We Lead Security Solutions",
-    "description": "Advanced security solutions designed to protect your facilities, assets, and operations with the highest standards of efficiency and reliability.",
-    "cta_primary": "Discover Services",
-    "cta_secondary": "Contact Us",
+    "direction": "ltr",
+    "slide1": {
+      "eyebrow": "Trusted security services since 2007",
+      "title": "An integrated security system",
+      "description": "Edarah protects businesses and public facilities with trained security teams, on-site guarding, electronic monitoring, and security plans tailored to each facility.",
+      "primaryCta": "Explore Our Services",
+      "secondaryCta": "Contact Us"
+    },
+    "slide2": {
+      "eyebrow": "Protection built around your facility",
+      "title": "Prepared people.\nProtected operations.",
+      "primaryCta": "Talk to Our Team",
+      "secondaryCta": "Watch Our Approach"
+    },
+    "download_proposal": "Download Company Profile",
+    "previous_slide": "Previous slide",
+    "next_slide": "Next slide",
+    "go_to_slide": "Go to slide {number}",
+    "unmute_video": "Unmute video",
+    "mute_video": "Mute video",
     "scroll_hint": "Scroll to explore",
     "city": "Riyadh",
     "country": "Saudi Arabia"
@@ -41,5 +58,64 @@
     "stat2_text": "Qualified Security & Admin Staff",
     "stat3_text": "Major Cities Across the Kingdom",
     "stat4_text": "Round-the-Clock Security & Monitoring"
+  },
+  "PeopleQuality": {
+    "direction": "ltr",
+    "eyebrow": "Our people",
+    "title": "Security begins with the people behind it.",
+    "description": "Every site is supported by carefully selected security personnel, continuous practical training, and direct field supervision. Clear standards and close follow-up help our teams respond with discipline and professionalism.",
+    "feature_1": "Careful screening before deployment",
+    "feature_2": "Ongoing security training and development",
+    "feature_3": "Qualified supervisors on the ground",
+    "image_alt": "Edarah security officer standing inside a commercial facility"
+  },
+  "ProposalDownload": {
+    "card_label": "EDARAH COMPANY PROFILE",
+    "card_title": "Integrated security services",
+    "card_caption": "Company profile · Established 2007",
+    "title": "Explore Edarah’s security capabilities.",
+    "description": "Download our company profile for an overview of Edarah’s integrated security services, including guarding, electronic surveillance, risk management, and specialist training for public and private sector facilities.",
+    "download_button": "Download Company Profile",
+    "contact_button": "Contact Our Team"
+  },
+  "SpecializedEnvironments": {
+    "title": "Trained for specialized environments.",
+    "description": "From healthcare and industrial sites to commercial and residential communities, we tailor each security plan to the facility. Our personnel receive practical preparation for site duties and the situations they may face, supported by clear supervision and follow-up.",
+    "feature_1": "Security plans tailored to each sector",
+    "feature_2": "Training in first aid, crowd management, and emergency response",
+    "feature_3": "Qualified field supervisors and ongoing monitoring",
+    "image_alt": "Edarah security officer inside a commercial facility"
+  },
+  "CallToAction": {
+    "title": "Protect your facility with a plan built around it.",
+    "description": "From on-site guarding and electronic surveillance to risk assessment and specialist training, Edarah provides integrated security solutions tailored to each facility and sector.",
+    "button": "Request a Security Consultation"
+  },
+  "Footer": {
+    "description": "Edarah Security Services has provided integrated protection for public and private sector facilities since 2007. Our services include guarding, electronic surveillance, risk management, and specialist security training.",
+    "brand_line": "Integrated Security Services · Since 2007",
+    "quick_title": "Explore",
+    "home": "Home",
+    "about": "About Edarah",
+    "services": "Services",
+    "sectors": "Sectors We Serve",
+    "contact": "Contact Us",
+    "services_title": "Our Services",
+    "legal_title": "Company Info",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "profile": "Company Profile",
+    "guarding": "Security Guarding",
+    "surveillance": "Electronic Surveillance",
+    "events": "Event Security",
+    "personal_protection": "Personal Protection",
+    "risk_management": "Risk Assessment & Management",
+    "training": "Security Training",
+    "contact_title": "Get in Touch",
+    "phone": "0127325555",
+    "email": "info@edarah-ss.com",
+    "location": "Taif, Saudi Arabia",
+    "copyright": "© {year} Edarah Security Services. All rights reserved.",
+    "group_note": "Part of Obaikan Holding Group"
   }
 }

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "../globals.css";
 import Header from "@/components/layout/Header";
-import EdarahFooter from "@/components/layout/Edarahfooter";
+import Footer from "@/components/layout/Footer";
 
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -47,7 +47,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <Header />
           {children}
-          <EdarahFooter />
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
