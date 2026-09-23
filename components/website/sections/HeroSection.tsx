@@ -385,7 +385,7 @@ export default function Hero() {
                       mt-9
                       mx-auto
                       max-w-[950px]
-                      text-[clamp(1.5rem,7.5vw,2.8rem)]
+                      text-[clamp(1.875rem,8vw,3.25rem)]
                       sm:mt-6
                       sm:mx-0
                       sm:text-[clamp(2.8rem,6vw,6.5rem)]
@@ -410,8 +410,8 @@ export default function Hero() {
                         mt-9
                         mx-auto
                         max-w-[680px]
-                        text-xs
-                        leading-5
+                        text-sm
+                        leading-6
                         text-white/75
                         sm:mt-7
                         sm:text-sm
