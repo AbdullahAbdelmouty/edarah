@@ -263,6 +263,125 @@
       "profile": "Download Company Profile"
     }
   },
+  "About": {
+    "meta": {
+      "title": "About Edarah | Edarah Security Services",
+      "description": "Edarah Security Services has provided integrated security for public and private sector facilities since 2007, as part of Obaikan Holding Group."
+    },
+    "hero": {
+      "eyebrow": "The Edarah standard",
+      "title": "Security that stays disciplined in every site we run.",
+      "p1": "In a market where security services look alike on the surface, the difference is what lies beneath: institutional governance, qualified people and a clear way of working.",
+      "p2": "Since 2007, we have protected commercial, industrial, residential and government facilities, combining guarding, electronic surveillance, risk management and specialist training.",
+      "chip1": "Institutional governance",
+      "chip2": "Qualified personnel",
+      "chip3": "Rapid, disciplined response",
+      "image_alt": "Edarah security officer inside a commercial facility",
+      "since": "Since 2007"
+    },
+    "trust": {
+      "eyebrow": "Why clients trust us",
+      "title": "What sets us apart on every site.",
+      "description": "A focused look at the structure, people and approach behind Edarah's work.",
+      "t1": {
+        "title": "Institutional backing",
+        "desc": "Part of Obaikan Holding Group, we operate to high governance standards at every site we manage.",
+        "b1": "High governance standards",
+        "b2": "Clear operating procedures",
+        "b3": "Accountable management"
+      },
+      "t2": {
+        "title": "Qualified, continuously trained teams",
+        "desc": "Our people are selected carefully and developed continuously, so the team on your site is ready for what it may face.",
+        "b1": "Rigorous candidate screening",
+        "b2": "Ongoing practical training",
+        "b3": "Direct field supervision"
+      },
+      "t3": {
+        "title": "Tailored solutions, fast response",
+        "desc": "We design solutions around your facility instead of offering ready-made packages, and respond with operational discipline.",
+        "b1": "Plans built per site",
+        "b2": "Quick incident response",
+        "b3": "Immediate reporting to management"
+      }
+    },
+    "about": {
+      "eyebrow": "About Edarah",
+      "title": "A team built around discipline, responsibility and trust.",
+      "caption": "The people behind Edarah",
+      "description": "Edarah Security Services is a specialist provider of integrated security for the public and private sectors, serving commercial, industrial, residential and government clients. We offer guarding, electronic surveillance, risk management and training programs that qualify our security staff to the highest professional standards.",
+      "group": "Edarah is part of Obaikan Holding Group, one of Saudi Arabia's leading economic groups, with a long presence in real estate development, contracting, operations, investment and property management.",
+      "vision_label": "Our vision",
+      "vision": "To be the first security choice for facilities and institutions in the Kingdom, through a protection system that combines institutional discipline with high operational efficiency.",
+      "mission_label": "Our mission",
+      "mission": "To deliver integrated security solutions designed around each client's needs, relying on qualified personnel, clear operating methods and modern monitoring systems, so clients can focus on their business without worry."
+    },
+    "values": {
+      "badge": "What drives us",
+      "title": "Our core values",
+      "integrity": {
+        "title": "Integrity",
+        "desc": "We treat our clients' facilities and property with full responsibility, as if they were our own."
+      },
+      "discipline": {
+        "title": "Discipline",
+        "desc": "We hold to the highest operating and governance standards at every site we manage."
+      },
+      "professionalism": {
+        "title": "Professionalism",
+        "desc": "We keep investing in our security teams to ensure strong field readiness."
+      },
+      "response": {
+        "title": "Rapid response",
+        "desc": "Real security is measured by how fast we handle an emergency, not only by routine presence."
+      },
+      "partnership": {
+        "title": "Partnership",
+        "desc": "We build long-term relationships based on mutual trust and a deep understanding of client needs."
+      }
+    },
+    "clients": {
+      "badge": "Trusted by",
+      "title": "Sites we protect every day",
+      "description": "A selection of clients across retail, real estate, industry and healthcare.",
+      "c1": {
+        "sector": "Shopping centre",
+        "name": "The Park, Taif",
+        "desc": "Field guarding, electronic surveillance, patrol management and security coordination during seasonal events."
+      },
+      "c2": {
+        "sector": "Retail",
+        "name": "Bin Dawood",
+        "desc": "Field guarding, entry and exit control and movement monitoring across operating hours."
+      },
+      "c3": {
+        "sector": "Urban development",
+        "name": "Madinat Al Wouroud",
+        "desc": "Comprehensive security for a large residential and commercial city, including reception, emergency monitoring and event coordination."
+      },
+      "c4": {
+        "sector": "Food industry",
+        "name": "Al Taif Dairy",
+        "desc": "Entry and exit control for production lines and warehouses, with food-facility safety protocols."
+      },
+      "c5": {
+        "sector": "Heavy industry",
+        "name": "Umm Al Qura Cement",
+        "desc": "Protection of production lines and equipment, and monitoring of truck and distribution movement."
+      },
+      "c6": {
+        "sector": "Healthcare",
+        "name": "Children's Hospital",
+        "desc": "Round-the-clock coverage, entry control and emergency department security under Ministry of Health standards."
+      }
+    },
+    "cta": {
+      "title": "Your security system starts here.",
+      "description": "Talk to our team about your facility, or download the company profile for a full overview.",
+      "button": "Contact Our Team",
+      "profile": "Download Company Profile"
+    }
+  },
   "Footer": {
     "description": "Edarah Security Services has provided integrated protection for public and private sector facilities since 2007. Our services include guarding, electronic surveillance, risk management, and specialist security training.",
     "brand_line": "Integrated Security Services · Since 2007",
