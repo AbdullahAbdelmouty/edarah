@@ -382,6 +382,71 @@
       "profile": "Download Company Profile"
     }
   },
+  "Contact": {
+    "meta": {
+      "title": "Contact Us | Edarah Security Services",
+      "description": "Request a security consultation from Edarah Security Services. Call 0127325555 or send us your requirements."
+    },
+    "hero": {
+      "eyebrow": "Security consultation",
+      "title": "Contact Us",
+      "description": "Tell us about your facility and we will recommend the right security plan for it.",
+      "chip1": "Site assessment visit",
+      "chip2": "Tailored security plan",
+      "chip3": "Direct line to our team"
+    },
+    "form": {
+      "badge": "Get started",
+      "title": "Request a Consultation",
+      "name": "Full name",
+      "name_ph": "Your full name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "service": "Service needed",
+      "service_ph": "Select a service",
+      "services": {
+        "guarding": "Security Guarding",
+        "surveillance": "Electronic Surveillance & Control Rooms",
+        "events": "Event Security",
+        "personal": "Personal Protection",
+        "risk": "Risk Assessment & Management",
+        "training": "Security Training",
+        "other": "Other / Not sure"
+      },
+      "message": "Message / details",
+      "message_ph": "Tell us about your site, sector and security needs...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "error": "We couldn't send your message. Please try again, or call us on 0127325555.",
+      "success_title": "Message sent",
+      "success_desc": "Thank you. Our team will review your request and contact you using the details you provided.",
+      "send_another": "Send another message"
+    },
+    "info": {
+      "title": "Contact Information",
+      "description": "Prefer to speak with someone directly? Reach us using the details below.",
+      "phone": {
+        "label": "Phone",
+        "note": "Speak with our team directly."
+      },
+      "email": {
+        "label": "Email",
+        "note": "Send us your requirements in writing."
+      },
+      "office": {
+        "label": "Location",
+        "value": "Taif, Saudi Arabia",
+        "note": "Serving facilities across major cities in the Kingdom."
+      },
+      "hours": {
+        "label": "Operations",
+        "value": "24/7 security coverage",
+        "note": "Round-the-clock security and monitoring."
+      },
+      "profile": "Download Company Profile",
+      "group": "Edarah Security Services is part of Obaikan Holding Group."
+    }
+  },
   "Footer": {
     "description": "Edarah Security Services has provided integrated protection for public and private sector facilities since 2007. Our services include guarding, electronic surveillance, risk management, and specialist security training.",
     "brand_line": "Integrated Security Services · Since 2007",

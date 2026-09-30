@@ -28,7 +28,10 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navLinks: { title: string; href: "/" | "/services" | "/about" | "/carrer" }[] = [
+  const navLinks: {
+    title: string;
+    href: "/" | "/services" | "/about" | "/carrer";
+  }[] = [
     { title: t("nav_home"), href: "/" },
     { title: t("nav_services"), href: "/services" },
     { title: t("nav_about"), href: "/about" },
@@ -108,13 +111,13 @@ export default function Header() {
               {t("nav_home")}
             </Link>
 
-            <a
-              href="#contact"
-              onClick={() => selectLink("#contact")}
+            <Link
+              href="/contact"
+              onClick={() => selectLink("/contact")}
               className="hidden rounded-lg bg-[#5E1E2B] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#481620] lg:inline-flex"
             >
               {t("contact_us")}
-            </a>
+            </Link>
 
             <button
               type="button"
