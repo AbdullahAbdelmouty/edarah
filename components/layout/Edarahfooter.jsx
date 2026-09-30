@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, ArrowUpLeft } from "lucide-react";
 
-// lucide-react no longer ships brand icons, so these are small inline SVGs
 function XIcon(props) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -79,12 +78,10 @@ export default function EdarahFooter() {
       dir="rtl"
       className="relative w-full overflow-hidden bg-[#0a0a0c] text-[#f2ede6]"
     >
-      {/* texture + glow, consistent with the rest of the site */}
       <div className="pointer-events-none absolute inset-0 z-0 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,0.012)_0px,rgba(255,255,255,0.012)_1px,transparent_1px,transparent_3px)] mix-blend-overlay" />
       <div className="pointer-events-none absolute -left-[10%] top-[-20%] h-[60%] w-[50%] bg-[radial-gradient(circle_at_30%_30%,#7a1b1e_0%,transparent_65%)] opacity-10 blur-[70px]" />
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-8 ">
-        {/* ===================== LINK GRID ===================== */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -92,7 +89,6 @@ export default function EdarahFooter() {
           viewport={{ once: true, margin: "-80px" }}
           className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.1fr] md:py-16"
         >
-          {/* brand */}
           <motion.div variants={itemVariants} className="flex flex-col gap-5">
             <div className="flex items-center gap-2.5">
               <img
@@ -131,7 +127,6 @@ export default function EdarahFooter() {
             </div>
           </motion.div>
 
-          {/* quick links */}
           <motion.div
             variants={itemVariants}
             className="flex flex-col gap-4 text-right"
@@ -152,7 +147,6 @@ export default function EdarahFooter() {
             </ul>
           </motion.div>
 
-          {/* services */}
           <motion.div
             variants={itemVariants}
             className="flex flex-col gap-4 text-right"
@@ -173,7 +167,6 @@ export default function EdarahFooter() {
             </ul>
           </motion.div>
 
-          {/* contact */}
           <motion.div
             variants={itemVariants}
             className="flex flex-col gap-4 text-right"
@@ -212,7 +205,6 @@ export default function EdarahFooter() {
           </motion.div>
         </motion.div>
 
-        {/* ===================== BOTTOM BAR ===================== */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

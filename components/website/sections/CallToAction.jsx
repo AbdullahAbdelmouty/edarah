@@ -4,17 +4,9 @@ import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
-// ============================================================
-// BRAND
-// ============================================================
-
 const BRAND = "#5E1E2B";
 const BRAND_DARK = "#351018";
 const CTA_START = "#481620";
-
-// ============================================================
-// FRAMER MOTION VARIANTS
-// ============================================================
 
 const revealVariants = {
   hidden: {
@@ -46,10 +38,6 @@ const itemVariants = {
     },
   },
 };
-
-// ============================================================
-// UPGRADE CTA
-// ============================================================
 
 export default function CallToAction() {
   const t = useTranslations("CallToAction");
@@ -83,10 +71,6 @@ export default function CallToAction() {
           backgroundPosition: "0 0",
         }}
       />
-
-      {/* ======================================================
-          CONTENT
-      ====================================================== */}
 
       <motion.div
         variants={revealVariants}

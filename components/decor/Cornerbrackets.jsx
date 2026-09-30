@@ -1,6 +1,3 @@
-// Small viewfinder-style corner brackets — a restrained nod to
-// surveillance/targeting UI, reused across sections as the site's
-// one shared security-brand signature motif.
 export default function CornerBrackets({
   className = "",
   color = "white",

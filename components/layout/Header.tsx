@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Globe, Menu, X } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
-import { usePathname, useRouter } from "@/i18n/routing";
+import { Link, usePathname, useRouter } from "@/i18n/routing";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,11 +28,11 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navLinks = [
-    { title: t("nav_home"), href: "#home" },
-    { title: t("nav_services"), href: "#services" },
-    { title: t("nav_about"), href: "#about" },
-    { title: t("nav_carrer"), href: "#carrer" },
+  const navLinks: { title: string; href: "/" | "/services" | "/about" | "/carrer" }[] = [
+    { title: t("nav_home"), href: "/" },
+    { title: t("nav_services"), href: "/services" },
+    { title: t("nav_about"), href: "/about" },
+    { title: t("nav_carrer"), href: "/carrer" },
   ];
 
   const selectLink = (href: string) => {
@@ -62,14 +62,12 @@ export default function Header() {
               }
         }
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed z-50 border-b border-zinc-200/80 px-3 py-2 font-sans text-[#5E1E2B] sm:px-4 lg:px-8 ${
-          "bg-[#f5f5f3]/85 backdrop-blur-md"
-        }`}
+        className={`fixed z-50 border-b border-zinc-200/80 px-3 py-2 font-sans text-[#5E1E2B] sm:px-4 lg:px-8 ${"bg-[#f5f5f3]/85 backdrop-blur-md"}`}
       >
         <div className="relative mx-auto flex h-14 max-w-[1440px] items-center justify-between">
-          <a
-            href="#home"
-            onClick={() => selectLink("#home")}
+          <Link
+            href="/"
+            onClick={() => selectLink("/")}
             className="flex shrink-0 items-center"
             aria-label={t("nav_home")}
           >
@@ -81,11 +79,11 @@ export default function Header() {
                 event.currentTarget.src = "/logo2.png";
               }}
             />
-          </a>
+          </Link>
 
           <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 text-sm font-semibold text-[#1c1c1c] lg:flex xl:gap-9">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => selectLink(link.href)}
@@ -97,18 +95,18 @@ export default function Header() {
                 }`}
               >
                 {link.title}
-              </a>
+              </Link>
             ))}
           </nav>
 
           <div className="flex shrink-0 items-center gap-2 sm:gap-4">
-            <a
-              href="#home"
-              onClick={() => selectLink("#home")}
+            <Link
+              href="/"
+              onClick={() => selectLink("/")}
               className="text-[11px] font-semibold text-[#5E1E2B] lg:hidden"
             >
               {t("nav_home")}
-            </a>
+            </Link>
 
             <a
               href="#contact"
@@ -156,7 +154,7 @@ export default function Header() {
             >
               <div className="mx-auto flex w-full max-w-[1440px] flex-col px-3 pb-3 pt-2 sm:px-4">
                 {navLinks.map((link) => (
-                  <a
+                  <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => selectLink(link.href)}
@@ -168,7 +166,7 @@ export default function Header() {
                     }`}
                   >
                     {link.title}
-                  </a>
+                  </Link>
                 ))}
                 <a
                   href="#contact"

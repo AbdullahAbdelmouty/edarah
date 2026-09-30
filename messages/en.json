@@ -91,6 +91,178 @@
     "description": "From on-site guarding and electronic surveillance to risk assessment and specialist training, Edarah provides integrated security solutions tailored to each facility and sector.",
     "button": "Request a Security Consultation"
   },
+  "Services": {
+    "meta": {
+      "title": "Security Services | Edarah Security Services",
+      "description": "Security guarding, electronic surveillance, event security, personal protection, risk assessment and security training for public and private sector facilities."
+    },
+    "hero": {
+      "eyebrow": "Specialized security coverage",
+      "title": "Security expertise across every environment.",
+      "description": "We build security plans around the demands of your industry and facility, delivered by trained teams with clear supervision.",
+      "chip1": "Screened personnel",
+      "chip2": "Clear standards",
+      "chip3": "Site-specific plans",
+      "photo1_alt": "Edarah security officer patrolling a shopping mall",
+      "photo2_alt": "Edarah supervisor coordinating by radio",
+      "photo3_alt": "Edarah security officer conducting an entry check"
+    },
+    "programs": {
+      "badge": "Security programs",
+      "eyebrow": "Built around your facility",
+      "title": "Professional security programs with clear scope and accountable execution.",
+      "description": "Every service is structured around the facility type, operating hours, traffic patterns and the standards your site needs to maintain.",
+      "recommended": "Recommended for",
+      "cta": "Inquire about this service",
+      "note": "Site assessments and custom plans available.",
+      "guarding": {
+        "tag": "On-site protection",
+        "title": "Security Guarding",
+        "desc": "Fixed posts or mobile patrols, set according to the nature of each site. Uniformed, supervised teams secure entrances, perimeters and daily operations.",
+        "b1": "Fixed guard posts and mobile patrols",
+        "b2": "Entry and exit control",
+        "b3": "Patrol schedules and incident reporting",
+        "rec": "Malls, residential compounds, factories and government facilities that need a consistent, visible presence."
+      },
+      "surveillance": {
+        "tag": "Continuous monitoring",
+        "title": "Electronic Surveillance & Control Rooms",
+        "desc": "Surveillance cameras linked to a central control room for continuous monitoring and documentation of activity across your site.",
+        "b1": "CCTV linked to a central control room",
+        "b2": "Continuous recording and documentation",
+        "b3": "Coordinated response with field teams",
+        "rec": "Large or multi-entrance sites where visibility and a documented record matter."
+      },
+      "events": {
+        "tag": "Temporary coverage",
+        "title": "Event & Occasion Security",
+        "desc": "Flexible, temporary security coverage for exhibitions, conferences and large events, with teams able to move quickly and manage crowds.",
+        "b1": "Entry management and access control",
+        "b2": "Crowd control and flow management",
+        "b3": "Rapid-response teams on the ground",
+        "rec": "Exhibitions, conferences, seasonal events and large bookings."
+      },
+      "personal": {
+        "tag": "VIP protection",
+        "title": "Personal Protection",
+        "desc": "Qualified protection teams that escort and secure VIPs according to precise security protocols.",
+        "b1": "Trained close-protection personnel",
+        "b2": "Escort and movement planning",
+        "b3": "Precise security protocols",
+        "rec": "Executives, guests of honor and high-profile visits that require discreet, disciplined protection."
+      },
+      "risk": {
+        "tag": "Assess & plan",
+        "title": "Risk Assessment & Management",
+        "desc": "We assess security risks at your facility and deliver preventive plans built on the findings.",
+        "b1": "On-site security assessment",
+        "b2": "Entry and exit point review",
+        "b3": "Preventive plans and escalation procedures",
+        "rec": "Facilities launching or reviewing their security setup and wanting a clear, evidence-based plan."
+      },
+      "training": {
+        "tag": "Capability building",
+        "title": "Security Training",
+        "desc": "Specialized qualification programs that raise the field readiness of security personnel.",
+        "b1": "Security guarding fundamentals",
+        "b2": "Crowd management and first aid",
+        "b3": "Emergency response procedures",
+        "rec": "Organizations that want their own security staff trained to professional standards."
+      }
+    },
+    "quality": {
+      "badge": "People first",
+      "title": "Security begins with the right people.",
+      "subtitle": "Selected, trained and supervised.",
+      "description": "The human element is the real difference in any security system. Every candidate passes a rigorous screening process before joining field teams, and every site is overseen by qualified supervisors.",
+      "cta": "Download Company Profile",
+      "medal_label": "Years of experience",
+      "medal_sub": "in security services",
+      "ribbon": "Since 2007",
+      "screening": {
+        "title": "Careful screening",
+        "desc": "Security and conduct record checks, physical fitness and emergency-handling ability before deployment."
+      },
+      "training": {
+        "title": "Ongoing training",
+        "desc": "Guarding basics, crowd management, first aid and emergency response."
+      },
+      "supervision": {
+        "title": "Field supervision",
+        "desc": "Qualified supervisors follow performance standards and keep management updated instantly."
+      },
+      "discipline": {
+        "title": "Uniform & discipline",
+        "desc": "A unified uniform and clear behavioral standards that reflect a professional image."
+      }
+    },
+    "sectors": {
+      "badge": "Sectors we serve",
+      "title": "Facilities we keep secure",
+      "description": "From hospitals and factories to malls and residential towers, our teams are prepared for the demands of each environment.",
+      "healthcare": {
+        "title": "Healthcare",
+        "desc": "Hospitals and medical facilities, with access control and round-the-clock emergency department coverage."
+      },
+      "commercial": {
+        "title": "Commercial",
+        "desc": "Malls, offices and stores, balancing effective protection with a smooth visitor experience."
+      },
+      "industrial": {
+        "title": "Industrial",
+        "desc": "Factories, warehouses and operating sites, with focus on entry control and protecting high-value assets."
+      },
+      "residential": {
+        "title": "Residential",
+        "desc": "Compounds and towers that give residents peace of mind without affecting their privacy."
+      },
+      "government": {
+        "title": "Government",
+        "desc": "Government entities and facilities, in line with the highest compliance and governance standards."
+      },
+      "events": {
+        "title": "Events & Occasions",
+        "desc": "Temporary, flexible coverage for exhibitions, conferences and major events."
+      },
+      "construction": {
+        "title": "Construction & Projects",
+        "desc": "Site access control, protection of equipment and materials, and follow-up of safety requirements."
+      },
+      "ask_text": "Don't see your sector?",
+      "ask_button": "Ask us"
+    },
+    "process": {
+      "badge": "How we work",
+      "title": "A clear process from contract to deployment.",
+      "description": "A step-by-step approach that moves smoothly from agreement to field execution, without gaps.",
+      "s1": {
+        "title": "Initial assessment",
+        "desc": "A site visit to review entry and exit points and identify risks specific to your activity."
+      },
+      "s2": {
+        "title": "Security plan design",
+        "desc": "A tailored plan covering staffing levels, deployment points, patrol schedules and escalation."
+      },
+      "s3": {
+        "title": "Approval & contracting",
+        "desc": "Plan review with you and a signed agreement covering service levels and responsibilities."
+      },
+      "s4": {
+        "title": "Field deployment",
+        "desc": "Qualified personnel deployed on site, with monitoring and reporting active from day one."
+      },
+      "s5": {
+        "title": "Continuous review",
+        "desc": "Regular performance reviews, with the plan updated as your risks or activity change."
+      }
+    },
+    "cta": {
+      "title": "Protect your facility with a plan built around it.",
+      "description": "Tell us about your site and we will recommend the right mix of guarding, surveillance and supervision.",
+      "button": "Request a Security Consultation",
+      "profile": "Download Company Profile"
+    }
+  },
   "Footer": {
     "description": "Edarah Security Services has provided integrated protection for public and private sector facilities since 2007. Our services include guarding, electronic surveillance, risk management, and specialist security training.",
     "brand_line": "Integrated Security Services · Since 2007",
