@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
+import ExperienceCard from "../ExperienceCard";
+import PhotoGallery from "../Photogallery";
 import {
   ArrowLeft,
   ArrowRight,
@@ -14,6 +16,7 @@ import {
   HardHat,
   Home,
   Landmark,
+  MessageCircle,
   PartyPopper,
   ShieldCheck,
   ShieldAlert,
@@ -119,6 +122,21 @@ function Pill({
   );
 }
 
+// Section divider: hairline - Pill - hairline (works in LTR and RTL)
+function SectionDivider({ label }: { label: string }) {
+  return (
+    <div
+      role="separator"
+      aria-label={label}
+      className="mb-10 flex items-center gap-4 md:mb-12"
+    >
+      <span aria-hidden="true" className="h-px flex-1 bg-[#5E1E2B]/15" />
+      <Pill>{label}</Pill>
+      <span aria-hidden="true" className="h-px flex-1 bg-[#5E1E2B]/15" />
+    </div>
+  );
+}
+
 // ============================================================
 // PAGE
 // ============================================================
@@ -136,7 +154,7 @@ export default function ServicesPage() {
       {/* =====================================================
           1. HERO BANNER
       ===================================================== */}
-      <section className="px-4 pt-24 sm:px-6 md:pt-28 lg:px-8">
+      <section className="px-4 pt-10 sm:px-6 md:pt-12 lg:px-8">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -180,34 +198,19 @@ export default function ServicesPage() {
       {/* =====================================================
           2. PHOTO TRIO
       ===================================================== */}
-      <section className="px-4 py-10 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-4 sm:grid-cols-3">
-          {HERO_PHOTOS.map((src, i) => (
-            <motion.div
-              key={src}
-              variants={reveal}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewport}
-              className="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#e5e5e5] shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
-            >
-              <Image
-                src={src}
-                alt={t(`hero.photo${i + 1}_alt`)}
-                fill
-                sizes="(min-width: 640px) 33vw, 100vw"
-                className="object-cover"
-              />
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      <PhotoGallery
+        photos={HERO_PHOTOS.map((src, i) => ({
+          src,
+          alt: t(`hero.photo${i + 1}_alt`),
+        }))}
+      />
 
       {/* =====================================================
           3. SERVICE PROGRAMS
       ===================================================== */}
-      <section id="programs" className="px-4 py-10 sm:px-6 md:py-16 lg:px-8">
+      <section id="programs" className="px-4 py-8 sm:px-6 md:py-12 lg:px-8">
         <div className="mx-auto max-w-[1280px]">
+          <SectionDivider label={t("programs.badge")} />
           <motion.div
             variants={reveal}
             initial="hidden"
@@ -215,7 +218,6 @@ export default function ServicesPage() {
             viewport={viewport}
             className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center"
           >
-            <Pill>{t("programs.badge")}</Pill>
             <p className="mt-2 text-xs font-medium text-[#5E1E2B]">
               {t("programs.eyebrow")}
             </p>
@@ -335,7 +337,6 @@ export default function ServicesPage() {
               viewport={viewport}
               className="flex flex-col items-start gap-5"
             >
-              <Pill>{t("quality.badge")}</Pill>
               <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-semibold leading-[1.1] text-[#141414]">
                 {t("quality.title")}
               </h2>
@@ -356,7 +357,7 @@ export default function ServicesPage() {
               </a>
             </motion.div>
 
-            {/* MEDALLION */}
+            {/* EXPERIENCE CARD */}
             <motion.div
               variants={reveal}
               initial="hidden"
@@ -364,26 +365,12 @@ export default function ServicesPage() {
               viewport={viewport}
               className="flex justify-center"
             >
-              <div className="relative flex h-64 w-64 items-center justify-center rounded-full border-2 border-[#5E1E2B]/20 bg-white shadow-[0_16px_40px_rgba(72,22,32,0.12)] sm:h-72 sm:w-72">
-                <div className="absolute inset-3 rounded-full border border-dashed border-[#5E1E2B]/30" />
-                <div className="relative text-center">
-                  <p className="text-6xl font-semibold text-[#5E1E2B] sm:text-7xl">
-                    19+
-                  </p>
-                  <p className="mt-2 text-sm font-medium text-[#363036]">
-                    {t("quality.medal_label")}
-                  </p>
-                  <p className="mt-1 text-xs text-[#363036]/60">
-                    {t("quality.medal_sub")}
-                  </p>
-                </div>
-                <span
-                  className="absolute -bottom-3 rounded-md px-5 py-1.5 text-xs font-semibold text-white"
-                  style={{ backgroundColor: BRAND_DARK }}
-                >
-                  {t("quality.ribbon")}
-                </span>
-              </div>
+              <ExperienceCard
+                value={19}
+                label={t("quality.medal_label")}
+                sub={t("quality.medal_sub")}
+                badge={t("quality.ribbon")}
+              />
             </motion.div>
           </div>
 
@@ -418,8 +405,9 @@ export default function ServicesPage() {
       {/* =====================================================
           5. SECTORS
       ===================================================== */}
-      <section className="px-4 py-16 sm:px-6 md:py-20 lg:px-8">
+      <section className="px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1280px]">
+          <SectionDivider label={t("sectors.badge")} />
           <motion.div
             variants={reveal}
             initial="hidden"
@@ -427,7 +415,6 @@ export default function ServicesPage() {
             viewport={viewport}
             className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center"
           >
-            <Pill>{t("sectors.badge")}</Pill>
             <h2 className="text-[clamp(1.75rem,3.6vw,2.75rem)] font-semibold leading-tight">
               {t("sectors.title")}
             </h2>
@@ -464,16 +451,55 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          <div className="mt-10 flex flex-col items-center gap-3 text-center">
-            <p className="text-sm text-[#363036]/70">{t("sectors.ask_text")}</p>
-            <a
-              href="#contact"
-              className="inline-flex rounded-lg px-6 py-3 text-sm font-semibold text-white transition hover:brightness-90"
-              style={{ backgroundColor: BRAND }}
-            >
-              {t("sectors.ask_button")}
-            </a>
-          </div>
+          {/* ASK US BANNER */}
+          <motion.div
+            variants={reveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            className="relative mt-12 overflow-hidden rounded-2xl p-6 text-white shadow-[0_20px_50px_-15px_rgba(72,22,32,0.5)] ring-1 ring-white/10 sm:p-8"
+            style={{
+              background: `linear-gradient(135deg, ${BRAND} 0%, ${BRAND_DARK} 100%)`,
+            }}
+          >
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 opacity-[0.1]"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle, #FFFFFF 1px, transparent 1px)",
+                backgroundSize: "18px 18px",
+              }}
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -top-24 -end-16 h-56 w-56 rounded-full bg-white/15 blur-3xl"
+            />
+
+            <div className="relative flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+              <div className="flex items-center gap-4">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/10 backdrop-blur-md">
+                  <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <p className="text-lg font-semibold leading-snug sm:text-xl">
+                  {t("sectors.ask_text")}
+                </p>
+              </div>
+
+              <a
+                href="#contact"
+                className="group inline-flex w-full items-center justify-center gap-3 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-[#481620] shadow-lg transition hover:bg-white/90 sm:w-auto"
+              >
+                {t("sectors.ask_button")}
+                <span
+                  className="flex h-6 w-6 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
+                  style={{ backgroundColor: BRAND }}
+                >
+                  <Arrow className="h-3.5 w-3.5" aria-hidden="true" />
+                </span>
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -489,7 +515,6 @@ export default function ServicesPage() {
             viewport={viewport}
             className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center"
           >
-            <Pill>{t("process.badge")}</Pill>
             <h2 className="text-[clamp(1.75rem,3.6vw,2.75rem)] font-semibold leading-tight">
               {t("process.title")}
             </h2>
