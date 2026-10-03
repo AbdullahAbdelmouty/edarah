@@ -39,7 +39,6 @@ export default function PhotoGallery({ photos }: { photos: Photo[] }) {
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06] motion-reduce:transform-none"
             />
 
-            {/* depth: bottom fade + inner hairline */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#141414]/65 via-transparent to-transparent" />
             <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/15" />
 
