@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import ExperienceCard from "../ExperienceCard";
 import PhotoGallery from "../Photogallery";
 import {
@@ -45,18 +46,12 @@ const COMPANY_PROFILE_PDF = "/الملف التعريفي انصات.pdf";
 // Put the matching photos in /public/services/ (extract them from the PDF
 // or use your own). Names below are what the component expects.
 const PROGRAMS = [
-  { id: "guarding", image: "/services/guarding.jpg" },
+  { id: "guarding", image: "/services/three.jpeg" },
   { id: "surveillance", image: "/services/surveillance.jpg" },
-  { id: "events", image: "/services/events.jpg" },
-  { id: "personal", image: "/services/personal-protection.jpg" },
-  { id: "risk", image: "/services/risk-assessment.jpg" },
-  { id: "training", image: "/services/training.jpg" },
-] as const;
-
-const HERO_PHOTOS = [
-  "/services/hero-1.jpg",
-  "/services/hero-2.jpg",
-  "/services/hero-3.jpg",
+  { id: "events", image: "/services/two.jpeg" },
+  { id: "personal", image: "/services/five.jpeg" },
+  { id: "risk", image: "/services/ten.jpeg" },
+  { id: "training", image: "/services/four.jpeg" },
 ] as const;
 
 const QUALITY: { id: string; icon: LucideIcon }[] = [
@@ -175,10 +170,10 @@ export default function ServicesPage() {
           />
           <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-5">
             <Pill dark>{t("hero.eyebrow")}</Pill>
-            <h1 className="text-[clamp(2rem,5vw,3.75rem)] font-semibold leading-[1.1] tracking-[-0.02em]">
+            <h1 className="text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.02em]">
               {t("hero.title")}
             </h1>
-            <p className="max-w-2xl text-sm leading-7 text-white/75 md:text-base md:leading-8">
+            <p className="max-w-2xl text-lg leading-8 text-white/80 sm:text-xl sm:leading-9">
               {t("hero.description")}
             </p>
             <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
@@ -196,19 +191,9 @@ export default function ServicesPage() {
       </section>
 
       {/* =====================================================
-          2. PHOTO TRIO
-      ===================================================== */}
-      <PhotoGallery
-        photos={HERO_PHOTOS.map((src, i) => ({
-          src,
-          alt: t(`hero.photo${i + 1}_alt`),
-        }))}
-      />
-
-      {/* =====================================================
           3. SERVICE PROGRAMS
       ===================================================== */}
-      <section id="programs" className="px-4 py-8 sm:px-6 md:py-12 lg:px-8">
+      <section id="programs" className="px-4 py-12 sm:px-6 md:py-18 lg:px-8">
         <div className="mx-auto max-w-[1280px]">
           <SectionDivider label={t("programs.badge")} />
           <motion.div
@@ -221,10 +206,10 @@ export default function ServicesPage() {
             <p className="mt-2 text-xs font-medium text-[#5E1E2B]">
               {t("programs.eyebrow")}
             </p>
-            <h2 className="text-[clamp(1.75rem,3.6vw,2.75rem)] font-semibold leading-tight text-[#141414]">
+            <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold leading-tight text-[#141414]">
               {t("programs.title")}
             </h2>
-            <p className="max-w-xl text-sm leading-7 text-[#363036]/75 md:text-base">
+            <p className="max-w-xl text-lg leading-8 text-[#363036]/80 sm:text-xl sm:leading-9">
               {t("programs.description")}
             </p>
           </motion.div>
@@ -299,14 +284,14 @@ export default function ServicesPage() {
                     </ul>
 
                     <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-3">
-                      <a
-                        href="#contact"
+                      <Link
+                        href="/contact"
                         className="inline-flex items-center gap-2.5 rounded-lg px-5 py-3 text-sm font-semibold text-white transition hover:brightness-90"
                         style={{ backgroundColor: BRAND }}
                       >
                         {t("programs.cta")}
                         <Arrow className="h-4 w-4" aria-hidden="true" />
-                      </a>
+                      </Link>
                       <span className="text-xs text-[#363036]/60">
                         {t("programs.note")}
                       </span>
@@ -337,13 +322,13 @@ export default function ServicesPage() {
               viewport={viewport}
               className="flex flex-col items-start gap-5"
             >
-              <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-semibold leading-[1.1] text-[#141414]">
+              <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold leading-[1.1] text-[#141414]">
                 {t("quality.title")}
               </h2>
               <p className="text-lg font-medium text-[#5E1E2B]">
                 {t("quality.subtitle")}
               </p>
-              <p className="max-w-xl text-sm leading-7 text-[#363036]/75 md:text-base md:leading-8">
+              <p className="max-w-xl text-lg leading-8 text-[#363036]/80 sm:text-xl sm:leading-9">
                 {t("quality.description")}
               </p>
               <a
@@ -390,10 +375,10 @@ export default function ServicesPage() {
                 >
                   <Icon className="h-4 w-4" aria-hidden="true" />
                 </span>
-                <h3 className="mt-4 text-sm font-semibold text-[#141414]">
+                <h3 className="mt-4 text-base font-bold text-[#141414]">
                   {t(`quality.${id}.title`)}
                 </h3>
-                <p className="mt-1.5 text-xs leading-6 text-[#363036]/70">
+                <p className="mt-2 text-sm leading-6 text-[#363036]/80 sm:text-base sm:leading-7">
                   {t(`quality.${id}.desc`)}
                 </p>
               </motion.div>
@@ -405,7 +390,7 @@ export default function ServicesPage() {
       {/* =====================================================
           5. SECTORS
       ===================================================== */}
-      <section className="px-4 sm:px-6 lg:px-8">
+      <section id="sectors" className="mb-10 scroll-mt-24 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1280px]">
           <SectionDivider label={t("sectors.badge")} />
           <motion.div
@@ -415,10 +400,10 @@ export default function ServicesPage() {
             viewport={viewport}
             className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center"
           >
-            <h2 className="text-[clamp(1.75rem,3.6vw,2.75rem)] font-semibold leading-tight">
+            <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold leading-tight">
               {t("sectors.title")}
             </h2>
-            <p className="max-w-xl text-sm leading-7 text-[#363036]/75 md:text-base">
+            <p className="max-w-xl text-lg leading-8 text-[#363036]/80 sm:text-xl sm:leading-9">
               {t("sectors.description")}
             </p>
           </motion.div>
@@ -440,10 +425,10 @@ export default function ServicesPage() {
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <div>
-                  <h3 className="text-sm font-semibold text-[#141414]">
+                  <h3 className="text-base font-bold text-[#141414]">
                     {t(`sectors.${id}.title`)}
                   </h3>
-                  <p className="mt-1.5 text-xs leading-6 text-[#363036]/70">
+                  <p className="mt-2 text-sm leading-6 text-[#363036]/80 sm:text-base sm:leading-7">
                     {t(`sectors.${id}.desc`)}
                   </p>
                 </div>
@@ -486,8 +471,8 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="group inline-flex w-full items-center justify-center gap-3 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-[#481620] shadow-lg transition hover:bg-white/90 sm:w-auto"
               >
                 {t("sectors.ask_button")}
@@ -497,7 +482,7 @@ export default function ServicesPage() {
                 >
                   <Arrow className="h-3.5 w-3.5" aria-hidden="true" />
                 </span>
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -515,10 +500,10 @@ export default function ServicesPage() {
             viewport={viewport}
             className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center"
           >
-            <h2 className="text-[clamp(1.75rem,3.6vw,2.75rem)] font-semibold leading-tight">
+            <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold leading-tight">
               {t("process.title")}
             </h2>
-            <p className="max-w-xl text-sm leading-7 text-[#363036]/75 md:text-base">
+            <p className="max-w-xl text-lg leading-8 text-[#363036]/80 sm:text-xl sm:leading-9">
               {t("process.description")}
             </p>
           </motion.div>
@@ -539,10 +524,10 @@ export default function ServicesPage() {
                 >
                   0{i + 1}
                 </span>
-                <h3 className="mt-4 text-sm font-semibold text-[#141414]">
+                <h3 className="mt-4 text-base font-bold text-[#141414]">
                   {t(`process.${s}.title`)}
                 </h3>
-                <p className="mt-2 text-xs leading-6 text-[#363036]/70">
+                <p className="mt-2 text-sm leading-6 text-[#363036]/80 sm:text-base sm:leading-7">
                   {t(`process.${s}.desc`)}
                 </p>
               </motion.li>
@@ -569,10 +554,10 @@ export default function ServicesPage() {
             className="h-8 w-8 text-white/80"
             aria-hidden="true"
           />
-          <h2 className="max-w-3xl text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-tight">
+          <h2 className="max-w-3xl text-[clamp(1.75rem,3vw,2.25rem)] font-bold leading-tight">
             {t("cta.title")}
           </h2>
-          <p className="max-w-2xl text-sm leading-7 text-white/75 md:text-base">
+          <p className="max-w-2xl text-lg leading-8 text-white/80 sm:text-xl sm:leading-9">
             {t("cta.description")}
           </p>
           <div className="mt-2 flex flex-col gap-3 sm:flex-row">

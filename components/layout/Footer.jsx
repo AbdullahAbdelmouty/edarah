@@ -2,6 +2,7 @@
 
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 const BRAND_DARK = "#351018";
 const FOOTER_DEEP = "#140b0e";
@@ -11,22 +12,26 @@ export default function Footer() {
   const locale = useLocale();
 
   const quickLinks = [
-    { label: t("home"), href: "#home" },
-    { label: t("about"), href: "#about" },
-    { label: t("services"), href: "#services" },
-    { label: t("sectors"), href: "#sectors" },
-    { label: t("contact"), href: "#contact" },
+    { label: t("home"), href: "/" },
+    { label: t("about"), href: "/about" },
+    { label: t("services"), href: "/services" },
+    { label: t("sectors"), href: "/services#sectors" },
+    { label: t("career"), href: "/career" },
+    { label: t("contact"), href: "/contact" },
   ];
 
   const serviceLinks = [
-    { label: t("guarding"), href: "#services" },
-    { label: t("surveillance"), href: "#services" },
-    { label: t("events"), href: "#services" },
-    { label: t("personal_protection"), href: "#services" },
-    { label: t("risk_management"), href: "#services" },
-    { label: t("training"), href: "#services" },
+    { label: t("guarding"), href: "/services#guarding" },
+    { label: t("surveillance"), href: "/services#surveillance" },
+    { label: t("events"), href: "/services#events" },
+    { label: t("personal_protection"), href: "/services#personal" },
+    { label: t("risk_management"), href: "/services#risk" },
+    { label: t("training"), href: "/services#training" },
   ];
-  const companyInfo = [t("privacy"), t("terms")];
+  const companyInfo = [
+    { label: t("privacy"), href: "/privacy" },
+    { label: t("terms"), href: "/terms" },
+  ];
 
   return (
     <footer
@@ -49,13 +54,13 @@ export default function Footer() {
 
       <div className="relative mx-auto max-w-7xl">
         <div className="flex flex-col items-center gap-2 text-center">
-          <a href="#home" aria-label={t("home")}>
+          <Link href="/" aria-label={t("home")}>
             <img
               src="/logo.png"
               alt="Edarah Security Services"
               className="h-16 w-auto object-contain brightness-0 invert"
             />
-          </a>
+          </Link>
           <p className="text-xs font-medium tracking-wide text-white/65 sm:text-sm">
             {t("brand_line")}
           </p>
@@ -71,12 +76,12 @@ export default function Footer() {
             <ul className="mt-4 flex flex-col gap-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-white/75 transition-colors hover:text-[#d7a2ab]"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -89,12 +94,12 @@ export default function Footer() {
             <ul className="mt-4 flex flex-col gap-3">
               {serviceLinks.map((link, index) => (
                 <li key={`${link.label}-${index}`}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-white/75 transition-colors hover:text-[#d7a2ab]"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -105,9 +110,14 @@ export default function Footer() {
               {t("legal_title")}
             </h2>
             <ul className="mt-4 flex flex-col gap-3">
-              {companyInfo.map((item) => (
-                <li key={item} className="text-sm text-white/75">
-                  {item}
+              {companyInfo.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-white/75 transition-colors hover:text-[#d7a2ab]"
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
               <li>

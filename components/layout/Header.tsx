@@ -9,11 +9,10 @@ import { Link, usePathname, useRouter } from "@/i18n/routing";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeHref, setActiveHref] = useState("#home");
   const t = useTranslations("Header");
   const locale = useLocale();
   const router = useRouter();
-  const pathname = usePathname();
+  const pathname = usePathname(); // locale-less path, e.g. "/services"
   const nextLocale = locale === "ar" ? "en" : "ar";
 
   const switchLanguage = () => {
@@ -28,20 +27,29 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close the mobile menu whenever the route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
   const navLinks: {
     title: string;
-    href: "/" | "/services" | "/about" | "/carrer";
+    href: "/" | "/services" | "/about" | "/career";
   }[] = [
     { title: t("nav_home"), href: "/" },
     { title: t("nav_services"), href: "/services" },
     { title: t("nav_about"), href: "/about" },
-    { title: t("nav_carrer"), href: "/carrer" },
+    { title: t("nav_carrer"), href: "/career" },
   ];
 
-  const selectLink = (href: string) => {
-    setActiveHref(href);
-    setIsOpen(false);
-  };
+  // Active state comes from the URL itself, so it is always correct:
+  // clicks, browser back/forward, direct visits, language switch, refresh.
+  const isActive = (href: string) =>
+    href === "/"
+      ? pathname === "/"
+      : pathname === href || pathname.startsWith(`${href}/`);
+
+  const contactActive = isActive("/contact");
 
   return (
     <>
@@ -65,12 +73,11 @@ export default function Header() {
               }
         }
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed z-50 border-b border-zinc-200/80 px-3 py-2 font-sans text-[#5E1E2B] sm:px-4 lg:px-8 ${"bg-[#f5f5f3]/85 backdrop-blur-md"}`}
+        className="fixed z-50 border-b border-zinc-200/80 bg-[#f5f5f3]/85 px-3 py-2 font-sans text-[#5E1E2B] backdrop-blur-md sm:px-4 lg:px-8"
       >
         <div className="relative mx-auto flex h-14 max-w-[1440px] items-center justify-between">
           <Link
             href="/"
-            onClick={() => selectLink("/")}
             className="flex shrink-0 items-center"
             aria-label={t("nav_home")}
           >
@@ -89,10 +96,9 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => selectLink(link.href)}
-                aria-current={activeHref === link.href ? "page" : undefined}
+                aria-current={isActive(link.href) ? "page" : undefined}
                 className={`border-b-2 py-2 transition-colors hover:text-[#5E1E2B] ${
-                  activeHref === link.href
+                  isActive(link.href)
                     ? "border-[#5E1E2B] text-[#5E1E2B]"
                     : "border-transparent"
                 }`}
@@ -105,7 +111,6 @@ export default function Header() {
           <div className="flex shrink-0 items-center gap-2 sm:gap-4">
             <Link
               href="/"
-              onClick={() => selectLink("/")}
               className="text-[11px] font-semibold text-[#5E1E2B] lg:hidden"
             >
               {t("nav_home")}
@@ -113,8 +118,12 @@ export default function Header() {
 
             <Link
               href="/contact"
-              onClick={() => selectLink("/contact")}
-              className="hidden rounded-lg bg-[#5E1E2B] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#481620] lg:inline-flex"
+              aria-current={contactActive ? "page" : undefined}
+              className={`hidden rounded-lg px-4 py-2 text-sm font-semibold text-white transition-colors lg:inline-flex ${
+                contactActive
+                  ? "bg-[#481620] ring-2 ring-[#5E1E2B]/30 ring-offset-2 ring-offset-[#f5f5f3]"
+                  : "bg-[#5E1E2B] hover:bg-[#481620]"
+              }`}
             >
               {t("contact_us")}
             </Link>
@@ -160,24 +169,27 @@ export default function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    onClick={() => selectLink(link.href)}
-                    aria-current={activeHref === link.href ? "page" : undefined}
+                    aria-current={isActive(link.href) ? "page" : undefined}
                     className={`border-s-2 px-3 py-3 text-xs font-medium text-[#5E1E2B] transition-colors ${
-                      activeHref === link.href
-                        ? "border-[#5E1E2B]"
+                      isActive(link.href)
+                        ? "border-[#5E1E2B] bg-[#5E1E2B]/5 font-semibold"
                         : "border-transparent"
                     }`}
                   >
                     {link.title}
                   </Link>
                 ))}
-                <a
-                  href="#contact"
-                  onClick={() => selectLink("#contact")}
-                  className="border-s-2 border-transparent px-3 py-3 text-xs font-medium text-[#5E1E2B]"
+                <Link
+                  href="/contact"
+                  aria-current={contactActive ? "page" : undefined}
+                  className={`border-s-2 px-3 py-3 text-xs font-medium text-[#5E1E2B] transition-colors ${
+                    contactActive
+                      ? "border-[#5E1E2B] bg-[#5E1E2B]/5 font-semibold"
+                      : "border-transparent"
+                  }`}
                 >
                   {t("contact_us")}
-                </a>
+                </Link>
                 <button
                   type="button"
                   onClick={switchLanguage}

@@ -20,10 +20,10 @@ export default function PeopleQualitySection() {
         className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14 lg:gap-20"
       >
         <div className="max-w-[600px]">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight tracking-tight text-[#141414]">
+          <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold leading-tight tracking-tight text-[#141414]">
             {t("title")}
           </h2>
-          <p className="mt-5 text-base leading-7 text-[#353535]/75 sm:text-lg sm:leading-8">
+          <p className="mt-5 text-lg leading-8 text-[#353535]/80 sm:text-xl sm:leading-9">
             {t("description")}
           </p>
 

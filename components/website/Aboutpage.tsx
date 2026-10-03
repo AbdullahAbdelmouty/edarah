@@ -18,6 +18,9 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
+import VisionMission from "../Visionmission";
+import ValuesSection from "../Valuessection";
+import LogoMarquee from "../Logomarquee";
 
 // ============================================================
 // BRAND (same tokens as Hero / ProposalDownload / ServicesPage)
@@ -32,9 +35,9 @@ const COMPANY_PROFILE_PDF = "/الملف التعريفي انصات.pdf";
 // ============================================================
 
 const TRUST: { id: string; image: string; icon: LucideIcon }[] = [
-  { id: "t1", image: "/about/trust-1.jpg", icon: Building2 },
-  { id: "t2", image: "/about/trust-2.jpg", icon: UserCheck },
-  { id: "t3", image: "/about/trust-3.jpg", icon: Lightbulb },
+  { id: "t1", image: "/about/four.jpeg", icon: Building2 },
+  { id: "t2", image: "/about/three.jpeg", icon: UserCheck },
+  { id: "t3", image: "/about/oneone.jpg", icon: Lightbulb },
 ];
 
 const VALUES: { id: string; icon: LucideIcon }[] = [
@@ -46,6 +49,40 @@ const VALUES: { id: string; icon: LucideIcon }[] = [
 ];
 
 const CLIENTS = ["c1", "c2", "c3", "c4", "c5", "c6"] as const;
+
+const PARTNER_LOGOS = [
+  "alrajhi-bank.png",
+  "alinma.png",
+  "riyad-bank.png",
+  "tawuniya.png",
+  "aldrees.png",
+  "bin-dawood.png",
+  "danube.png",
+  "obaikan-holding.png",
+  "ministry-of-commerce.png",
+  "ministry-of-health.png",
+  "riyadh-chamber.png",
+  "taif-chamber.png",
+  "hamat.png",
+  "happyland.png",
+  "the-park-mall.png",
+  "tera-mall.png",
+  "edarah-construction.png",
+  "edarah-real-estate.png",
+  "taqat.png",
+  "shuoor.png",
+  "alamin.png",
+  "awaliv-international-hotel.png",
+  "iridium-hotel.png",
+  "hand-hotels-resorts.png",
+  "platinum-park.png",
+  "valley-center.png",
+  "majma-qalb-altaif.png",
+  "alban-altaif-dairy.png",
+  "dar-taj-indian.png",
+  "diaar-alwouroud.png",
+  "madinat-alwouroud.png",
+];
 
 // ============================================================
 // MOTION
@@ -115,13 +152,13 @@ export default function AboutPage() {
           />
           <div className="relative flex flex-col items-start gap-5">
             <Pill dark>{t("hero.eyebrow")}</Pill>
-            <h1 className="text-[clamp(2rem,4.6vw,3.5rem)] font-semibold leading-[1.1] tracking-[-0.02em]">
+            <h1 className="text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.02em]">
               {t("hero.title")}
             </h1>
-            <p className="text-sm leading-7 text-white/75 md:text-base md:leading-8">
+            <p className="text-lg leading-8 text-white/80 sm:text-xl sm:leading-9">
               {t("hero.p1")}
             </p>
-            <p className="text-sm leading-7 text-white/75 md:text-base md:leading-8">
+            <p className="text-lg leading-8 text-white/80 sm:text-xl sm:leading-9">
               {t("hero.p2")}
             </p>
             <div className="mt-1 flex flex-wrap gap-3">
@@ -138,7 +175,7 @@ export default function AboutPage() {
 
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-white/15">
             <Image
-              src="/about/standard.jpg"
+              src="/about/five.jpeg"
               alt={t("hero.image_alt")}
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
@@ -163,11 +200,11 @@ export default function AboutPage() {
               <p className="text-xs font-medium text-[#5E1E2B]">
                 {t("trust.eyebrow")}
               </p>
-              <h2 className="mt-2 text-[clamp(1.75rem,3.4vw,2.5rem)] font-semibold leading-tight">
+              <h2 className="mt-2 text-[clamp(1.75rem,3vw,2.25rem)] font-bold leading-tight text-[#141414]">
                 {t("trust.title")}
               </h2>
             </div>
-            <p className="max-w-xs text-sm leading-6 text-[#363036]/70">
+            <p className="max-w-xl text-lg leading-8 text-[#363036]/80 sm:text-xl sm:leading-9">
               {t("trust.description")}
             </p>
           </div>
@@ -230,36 +267,34 @@ export default function AboutPage() {
           3. ABOUT: VISION & MISSION
       ===================================================== */}
       <section className="px-4 pb-14 sm:px-6 md:pb-20 lg:px-8">
-        <div className="mx-auto max-w-[1280px] overflow-hidden rounded-3xl border border-[#5E1E2B]/10 bg-white shadow-[0_16px_40px_rgba(72,22,32,0.08)]">
-          <div className="border-b border-[#5E1E2B]/10 p-6 sm:p-10">
-            <div className="flex items-center gap-3 text-xs font-medium text-[#5E1E2B]">
-              <span className="h-px w-6 bg-[#5E1E2B]" />
-              {t("about.eyebrow")}
+        <div className="mx-auto max-w-[1280px] rounded-3xl border border-[#5E1E2B]/10 bg-white p-5 shadow-[0_16px_40px_rgba(72,22,32,0.08)] sm:p-8">
+          {/* Header */}
+          <div className="flex flex-col gap-4 border-b border-[#5E1E2B]/10 pb-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-xs font-medium text-[#5E1E2B]">
+                {t("about.eyebrow")}
+              </p>
+              <h2 className="mt-2 text-[clamp(1.75rem,3vw,2.25rem)] font-bold leading-tight text-[#141414]">
+                {t("about.title")}
+              </h2>
             </div>
-            <h2 className="mt-3 max-w-3xl text-[clamp(1.75rem,3.6vw,2.75rem)] font-semibold leading-tight">
-              {t("about.title")}
-            </h2>
           </div>
 
-          <div className="grid gap-8 p-6 sm:p-10 md:grid-cols-[minmax(0,320px)_1fr]">
-            <figure>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#e5e5e5]">
+          <div className="mt-6 grid gap-8 md:grid-cols-[minmax(0,320px)_1fr]">
+            <figure className="h-full">
+              <div className="relative h-full min-h-[300px] overflow-hidden rounded-xl bg-[#e5e5e5]">
                 <Image
-                  src="/about/team.jpg"
+                  src="/about/two.jpeg"
                   alt={t("about.caption")}
                   fill
                   sizes="(min-width: 768px) 320px, 100vw"
                   className="object-cover"
                 />
               </div>
-              <figcaption className="mt-3 flex items-center gap-3 text-xs text-[#363036]/70">
-                <span className="h-px w-6 bg-[#5E1E2B]" />
-                {t("about.caption")}
-              </figcaption>
             </figure>
 
-            <div className="flex flex-col gap-6">
-              <p className="max-w-2xl text-sm leading-7 text-[#363036]/80 md:text-base md:leading-8">
+            <div className="flex flex-col justify-center gap-6">
+              <p className="max-w-2xl text-lg leading-8 text-[#363036]/80 sm:text-xl sm:leading-9">
                 {t("about.description")}
               </p>
               <div className="flex items-start gap-3 rounded-lg border border-[#5E1E2B]/10 bg-[#FBFBFA] p-4">
@@ -271,26 +306,24 @@ export default function AboutPage() {
                   {t("about.group")}
                 </p>
               </div>
-              <div className="grid border-t border-[#5E1E2B]/10 md:grid-cols-2">
-                {(["vision", "mission"] as const).map((k, i) => (
-                  <div
-                    key={k}
-                    className={`py-5 md:py-6 ${
-                      i === 0
-                        ? "md:pe-6"
-                        : "border-t border-[#5E1E2B]/10 md:border-s md:border-t-0 md:ps-6"
-                    }`}
-                  >
-                    <p className="text-[11px] font-semibold text-[#5E1E2B]">
-                      {t(`about.${k}_label`)}
-                    </p>
-                    <p className="mt-2 text-sm leading-7 text-[#363036]/80">
-                      {t(`about.${k}`)}
-                    </p>
-                  </div>
-                ))}
-              </div>
             </div>
+          </div>
+
+          <div className="mt-8 border-t border-[#5E1E2B]/10 pt-8">
+            <VisionMission
+              items={[
+                {
+                  kind: "vision",
+                  label: t("about.vision_label"),
+                  text: t("about.vision"),
+                },
+                {
+                  kind: "mission",
+                  label: t("about.mission_label"),
+                  text: t("about.mission"),
+                },
+              ]}
+            />
           </div>
         </div>
       </section>
@@ -298,56 +331,50 @@ export default function AboutPage() {
       {/* =====================================================
           4. CORE VALUES
       ===================================================== */}
-      <section className="px-4 pb-14 sm:px-6 md:pb-20 lg:px-8">
-        <div className="mx-auto max-w-[1280px] rounded-3xl bg-[#F3E6E8]/60 p-6 sm:p-10">
-          <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-            <Pill>{t("values.badge")}</Pill>
-            <h2 className="text-[clamp(1.75rem,3.6vw,2.75rem)] font-semibold">
-              {t("values.title")}
-            </h2>
-          </div>
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {VALUES.map(({ id, icon: Icon }) => (
-              <motion.div
-                key={id}
-                variants={reveal}
-                initial="hidden"
-                whileInView="visible"
-                viewport={viewport}
-                className="rounded-xl border border-[#5E1E2B]/10 bg-white p-5 shadow-[0_8px_24px_rgba(72,22,32,0.06)]"
-              >
-                <span
-                  className="flex h-11 w-11 items-center justify-center rounded-xl text-white shadow-md"
-                  style={{ backgroundColor: BRAND }}
-                >
-                  <Icon className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <h3 className="mt-5 text-lg font-semibold">
-                  {t(`values.${id}.title`)}
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-[#363036]/75">
-                  {t(`values.${id}.desc`)}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ValuesSection
+        badge={t("values.badge")}
+        title={t("values.title")}
+        items={VALUES.map(({ id, icon }) => ({
+          id,
+          icon,
+          title: t(`values.${id}.title`),
+          desc: t(`values.${id}.desc`),
+        }))}
+      />
 
       {/* =====================================================
           5. CLIENTS WE PROTECT
       ===================================================== */}
       <section className="bg-[#eeeeee] px-4 py-14 sm:px-6 md:py-20 lg:px-8">
         <div className="mx-auto max-w-[1280px]">
-          <div className="mx-auto flex max-w-3xl flex-col items-center gap-3 text-center">
+          <motion.div
+            variants={reveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            className="mx-auto flex max-w-3xl flex-col items-center gap-3 text-center"
+          >
             <Pill>{t("clients.badge")}</Pill>
-            <h2 className="text-[clamp(1.75rem,3.6vw,2.75rem)] font-semibold leading-tight">
+            <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold leading-tight">
               {t("clients.title")}
             </h2>
-            <p className="max-w-xl text-sm leading-7 text-[#363036]/75 md:text-base">
+            <p className="max-w-xl text-lg leading-8 text-[#363036]/80 sm:text-xl sm:leading-9">
               {t("clients.description")}
             </p>
-          </div>
+          </motion.div>
+
+          {/* ── Partner Logo Marquee ── */}
+          <motion.div
+            variants={reveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            className="mt-12"
+          >
+            <LogoMarquee logos={PARTNER_LOGOS} />
+          </motion.div>
+
+          {/* ── Client detail cards ── */}
           <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {CLIENTS.map((c) => (
               <motion.div
@@ -356,12 +383,19 @@ export default function AboutPage() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={viewport}
-                className="rounded-xl bg-white p-5 shadow-[0_8px_24px_rgba(72,22,32,0.06)]"
+                className="group relative overflow-hidden rounded-xl border border-[#5E1E2B]/10 bg-white p-6 shadow-[0_8px_24px_rgba(72,22,32,0.06)] transition-all duration-300 hover:border-[#5E1E2B]/25 hover:shadow-[0_12px_32px_rgba(72,22,32,0.12)]"
               >
-                <p className="text-[11px] font-semibold text-[#5E1E2B]">
+                {/* Decorative top accent */}
+                <div
+                  className="absolute inset-x-0 top-0 h-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{
+                    background: `linear-gradient(90deg, ${BRAND} 0%, ${BRAND_DARK} 100%)`,
+                  }}
+                />
+                <span className="inline-flex items-center rounded-full border border-[#5E1E2B]/15 bg-[#5E1E2B]/5 px-3 py-1 text-[11px] font-semibold text-[#5E1E2B]">
                   {t(`clients.${c}.sector`)}
-                </p>
-                <h3 className="mt-2 text-lg font-semibold">
+                </span>
+                <h3 className="mt-3 text-lg font-bold text-[#141414]">
                   {t(`clients.${c}.name`)}
                 </h3>
                 <p className="mt-2 text-sm leading-6 text-[#363036]/75">
@@ -387,10 +421,10 @@ export default function AboutPage() {
             background: `linear-gradient(135deg, ${BRAND} 0%, ${BRAND_DARK} 100%)`,
           }}
         >
-          <h2 className="max-w-3xl text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-tight">
+          <h2 className="max-w-3xl text-[clamp(1.75rem,3vw,2.25rem)] font-bold leading-tight">
             {t("cta.title")}
           </h2>
-          <p className="max-w-2xl text-sm leading-7 text-white/75 md:text-base">
+          <p className="max-w-2xl text-lg leading-8 text-white/80 sm:text-xl sm:leading-9">
             {t("cta.description")}
           </p>
           <div className="mt-2 flex flex-col gap-3 sm:flex-row">
