@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 import { Download, FileText } from "lucide-react";
+import { Link } from "@/i18n/routing";
 
 const BRAND = "#5E1E2B";
 const BRAND_DARK = "#481620";
@@ -72,10 +73,10 @@ export default function ProposalDownload() {
         </div>
 
         <div className="flex min-w-0 flex-1 flex-col items-start gap-4 sm:gap-5">
-          <h3 className="max-w-2xl  text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-[#141414]">
+          <h3 className="max-w-2xl text-[clamp(1.75rem,3vw,2.25rem)] font-bold leading-tight text-[#141414]">
             {t("title")}
           </h3>
-          <p className="max-w-2xl text-base leading-7 text-[#363036]/75 sm:text-lg sm:leading-8">
+          <p className="max-w-2xl text-lg leading-8 text-[#363036]/80 sm:text-xl sm:leading-9">
             {t("description")}
           </p>
 
@@ -89,12 +90,12 @@ export default function ProposalDownload() {
               <Download aria-hidden="true" className="h-4 w-4" />
               <span>{t("download_button")}</span>
             </a>
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center rounded-lg border border-[#5E1E2B]/15 bg-[#FBFBFA] px-5 py-3 text-sm font-medium text-[#481620] transition-colors hover:bg-[#5E1E2B]/[0.06] sm:min-w-[190px]"
             >
               {t("contact_button")}
-            </a>
+            </Link>
           </div>
         </div>
       </motion.div>

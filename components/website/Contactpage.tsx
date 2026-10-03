@@ -79,6 +79,30 @@ const fieldClass =
   "w-full rounded-lg border border-[#5E1E2B]/15 bg-[#F4F4F3] px-3.5 py-2.5 text-sm text-[#141414] placeholder:text-[#363036]/40 transition focus:border-[#5E1E2B] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#5E1E2B]/20";
 
 // ============================================================
+// SMALL PIECES
+// ============================================================
+
+function Pill({
+  children,
+  dark = false,
+}: {
+  children: React.ReactNode;
+  dark?: boolean;
+}) {
+  return (
+    <span
+      className={`inline-flex items-center rounded-full border px-4 py-1.5 text-[11px] font-medium md:text-xs ${
+        dark
+          ? "border-white/25 bg-white/10 text-white backdrop-blur-md"
+          : "border-[#5E1E2B]/20 bg-white text-[#481620]"
+      }`}
+    >
+      {children}
+    </span>
+  );
+}
+
+// ============================================================
 // PAGE
 // ============================================================
 
@@ -134,12 +158,12 @@ export default function ContactPage() {
       {/* =====================================================
           1. BANNER
       ===================================================== */}
-      <section className="px-4 pt-24 sm:px-6 md:pt-28 lg:px-8">
+      <section className="px-4 pt-10 sm:px-6 md:pt-12 lg:px-8">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={reveal}
-          className="relative mx-auto max-w-[1280px] overflow-hidden rounded-2xl px-6 py-12 text-center text-white shadow-[0_20px_50px_rgba(72,22,32,0.25)] sm:px-10 md:py-16"
+          className="relative mx-auto max-w-[1280px] overflow-hidden rounded-2xl px-6 py-14 text-center text-white shadow-[0_20px_50px_rgba(72,22,32,0.25)] sm:px-10 md:py-20"
           style={{
             background: `linear-gradient(135deg, ${BRAND} 0%, ${BRAND_DARK} 100%)`,
           }}
@@ -153,21 +177,19 @@ export default function ContactPage() {
               backgroundSize: "18px 18px",
             }}
           />
-          <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-4">
-            <span className="rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[11px] font-medium backdrop-blur-md md:text-xs">
-              {t("hero.eyebrow")}
-            </span>
-            <h1 className="text-[clamp(2rem,4.6vw,3.5rem)] font-semibold leading-[1.1] tracking-[-0.02em]">
+          <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-5">
+            <Pill dark>{t("hero.eyebrow")}</Pill>
+            <h1 className="text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.02em]">
               {t("hero.title")}
             </h1>
-            <p className="text-sm leading-7 text-white/75 md:text-base">
+            <p className="max-w-2xl text-lg leading-8 text-white/80 sm:text-xl sm:leading-9">
               {t("hero.description")}
             </p>
             <div className="mt-2 flex flex-wrap justify-center gap-3">
               {(["chip1", "chip2", "chip3"] as const).map((c) => (
                 <span
                   key={c}
-                  className="rounded-lg border border-white/20 bg-white/10 px-4 py-2 text-xs text-white/90 backdrop-blur-md"
+                  className="rounded-lg border border-white/20 bg-white/10 px-5 py-2 text-xs font-medium text-white/90 backdrop-blur-md md:text-sm"
                 >
                   {t(`hero.${c}`)}
                 </span>
@@ -197,10 +219,10 @@ export default function ContactPage() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <span className="rounded-full border border-white/25 bg-white/10 px-3.5 py-1 text-[11px] font-medium">
-              {t("form.badge")}
-            </span>
-            <h2 className="mt-4 text-3xl font-semibold">{t("form.title")}</h2>
+            <Pill dark>{t("form.badge")}</Pill>
+            <h2 className="mt-4 text-[clamp(1.75rem,3vw,2.25rem)] font-bold leading-tight text-white">
+              {t("form.title")}
+            </h2>
 
             <div className="mt-6 rounded-2xl bg-white p-5 text-[#141414] sm:p-6">
               <AnimatePresence mode="wait">
@@ -219,10 +241,10 @@ export default function ContactPage() {
                     >
                       <CheckCircle2 className="h-7 w-7" aria-hidden="true" />
                     </span>
-                    <h3 className="text-2xl font-semibold">
+                    <h3 className="text-2xl font-bold leading-tight">
                       {t("form.success_title")}
                     </h3>
-                    <p className="max-w-sm text-sm leading-7 text-[#363036]/75">
+                    <p className="max-w-sm text-base leading-7 text-[#363036]/75">
                       {t("form.success_desc")}
                     </p>
                     <button
@@ -413,8 +435,10 @@ export default function ContactPage() {
             viewport={{ once: true, amount: 0.2 }}
             className="flex flex-col"
           >
-            <h2 className="text-3xl font-semibold">{t("info.title")}</h2>
-            <p className="mt-3 max-w-md text-sm leading-7 text-white/75">
+            <h2 className="text-[clamp(1.75rem,3vw,2.25rem)] font-bold leading-tight text-white">
+              {t("info.title")}
+            </h2>
+            <p className="mt-3 max-w-md text-lg leading-8 text-white/80 sm:text-xl sm:leading-9">
               {t("info.description")}
             </p>
 
@@ -430,7 +454,7 @@ export default function ContactPage() {
                   >
                     <Icon className="h-4 w-4" aria-hidden="true" />
                   </span>
-                  <h3 className="mt-3 text-sm font-semibold">
+                  <h3 className="mt-3 text-base font-bold text-[#141414]">
                     {t(`info.${id}.label`)}
                   </h3>
                   {value &&
@@ -438,19 +462,21 @@ export default function ContactPage() {
                       <a
                         href={href}
                         dir={ltr ? "ltr" : undefined}
-                        className="mt-1 inline-block break-all text-sm text-[#363036] underline-offset-4 hover:underline"
+                        className="mt-1 inline-block break-all text-sm font-medium text-[#363036] underline-offset-4 hover:underline sm:text-base"
                       >
                         {value}
                       </a>
                     ) : (
-                      <p className="mt-1 text-sm text-[#363036]">{value}</p>
+                      <p className="mt-1 text-sm font-medium text-[#363036] sm:text-base">
+                        {value}
+                      </p>
                     ))}
                   {!value && (
-                    <p className="mt-1 text-sm text-[#363036]">
+                    <p className="mt-1 text-sm font-medium text-[#363036] sm:text-base">
                       {t(`info.${id}.value`)}
                     </p>
                   )}
-                  <p className="mt-1.5 text-xs leading-5 text-[#363036]/60">
+                  <p className="mt-1.5 text-xs leading-5 text-[#363036]/70 sm:text-sm">
                     {t(`info.${id}.note`)}
                   </p>
                 </div>
@@ -460,7 +486,7 @@ export default function ContactPage() {
             <div className="mt-4 flex flex-wrap gap-3">
               <a
                 href="https://edarah-ss.com"
-                className="inline-flex items-center gap-2 rounded-lg border border-white/25 bg-white/10 px-4 py-2.5 text-xs font-medium backdrop-blur-md transition hover:bg-white/20"
+                className="inline-flex items-center gap-2 rounded-lg border border-white/25 bg-white/10 px-4 py-2.5 text-xs font-medium backdrop-blur-md transition hover:bg-white/20 sm:text-sm"
               >
                 <Globe className="h-4 w-4" aria-hidden="true" />
                 <span dir="ltr">edarah-ss.com</span>
@@ -468,14 +494,14 @@ export default function ContactPage() {
               <a
                 href={COMPANY_PROFILE_PDF}
                 download="Edarah-Company-Profile.pdf"
-                className="inline-flex items-center gap-2 rounded-lg border border-white/25 bg-white/10 px-4 py-2.5 text-xs font-medium backdrop-blur-md transition hover:bg-white/20"
+                className="inline-flex items-center gap-2 rounded-lg border border-white/25 bg-white/10 px-4 py-2.5 text-xs font-medium backdrop-blur-md transition hover:bg-white/20 sm:text-sm"
               >
                 <Download className="h-4 w-4" aria-hidden="true" />
                 {t("info.profile")}
               </a>
             </div>
 
-            <p className="mt-auto pt-8 text-xs text-white/60">
+            <p className="mt-auto pt-8 text-xs text-white/70 sm:text-sm">
               {t("info.group")}
             </p>
           </motion.div>

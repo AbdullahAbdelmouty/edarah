@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 import {
   ArrowLeft,
@@ -32,8 +33,8 @@ const slideContent = [
     type: "video" as const,
     src: "/hero.mp4",
     copy: "slide1",
-    primaryHref: "#contact",
-    secondaryHref: "#services",
+    primaryHref: "/services",
+    secondaryHref: "/contact",
     showDownload: true,
     showVideoButton: false,
   },
@@ -385,10 +386,10 @@ export default function Hero() {
                       mt-9
                       mx-auto
                       max-w-[950px]
-                      text-[clamp(1.875rem,8vw,3.25rem)]
+                      text-[clamp(1.875rem,8vw,1.5rem)]
                       sm:mt-6
                       sm:mx-0
-                      sm:text-[clamp(2.8rem,6vw,6.5rem)]
+                      sm:text-[clamp(2.8rem,6vw,4.5rem)]
                       font-medium
                       leading-[1.08]
                       tracking-[-0.035em]
@@ -410,15 +411,15 @@ export default function Hero() {
                         mt-9
                         mx-auto
                         max-w-[680px]
-                        text-sm
-                        leading-6
+                        text-base
+                        leading-7
                         text-white/75
                         sm:mt-7
-                        sm:text-sm
-                        sm:leading-7
-                        md:text-base
-                        md:leading-8
-                        lg:text-lg
+                        sm:text-lg
+                        sm:leading-8
+                        md:text-xl
+                        md:leading-relaxed
+                        lg:text-[clamp(1.5rem,2vw,1.4rem)]
                         sm:mx-0
                       "
                     >
@@ -451,8 +452,8 @@ export default function Hero() {
                   >
                     {/* PRIMARY */}
 
-                    <a
-                      href={currentSlide.primaryHref}
+                    <Link
+                      href={currentSlide.primaryHref as any}
                       className="
                         group
                         inline-flex
@@ -507,12 +508,12 @@ export default function Hero() {
                           <ArrowRight className="h-4 w-4" />
                         )}
                       </span>
-                    </a>
+                    </Link>
 
                     {/* SECONDARY */}
 
-                    <a
-                      href={currentSlide.secondaryHref}
+                    <Link
+                      href={currentSlide.secondaryHref as any}
                       className="
                         inline-flex
                         w-full
@@ -545,7 +546,7 @@ export default function Hero() {
                       {currentSlide.showVideoButton && (
                         <Play className="h-4 w-4 fill-current" />
                       )}
-                    </a>
+                    </Link>
 
                     {/* DOWNLOAD */}
 
@@ -702,39 +703,6 @@ export default function Hero() {
                     )}
                   </button>
                 </div>
-
-                {/* ==================================================
-                    SOUND
-                ================================================== */}
-
-                <button
-                  type="button"
-                  onClick={toggleMute}
-                  aria-label={isMuted ? t("unmute_video") : t("mute_video")}
-                  className="
-                    hidden
-                    h-11
-                    w-11
-                    items-center
-                    justify-center
-                    sm:flex
-                    rounded-full
-                    border
-                    border-white/30
-                    bg-black/20
-                    text-white
-                    backdrop-blur-md
-                    transition-all
-                    duration-300
-                    hover:bg-white/15
-                  "
-                >
-                  {isMuted ? (
-                    <VolumeX className="h-4 w-4" />
-                  ) : (
-                    <Volume2 className="h-4 w-4" />
-                  )}
-                </button>
               </div>
             </div>
           </div>

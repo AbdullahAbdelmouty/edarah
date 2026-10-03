@@ -24,7 +24,7 @@
     },
     "slide2": {
       "eyebrow": "Protection built around your facility",
-      "title": "Prepared people.\nProtected operations.",
+      "title": "Prepared people\nProtected operations",
       "primaryCta": "Talk to Our Team",
       "secondaryCta": "Watch Our Approach"
     },
@@ -40,7 +40,7 @@
   },
   "WhyUs": {
     "badge": "Why Choose Us?",
-    "title": "In a market where security services appear identical on the surface, the difference is made by what lies beneath.",
+    "title": "In a market where security services appear identical on the surface, the difference is made by what lies beneath",
     "description_intro": "At every site we manage, we deliver an integrated security ecosystem featuring:",
     "feature_1": "Continuously trained & certified personnel",
     "feature_2": "Tailored solutions for every facility",
@@ -62,7 +62,7 @@
   "PeopleQuality": {
     "direction": "ltr",
     "eyebrow": "Our people",
-    "title": "Security begins with the people behind it.",
+    "title": "Security begins with the people behind it",
     "description": "Every site is supported by carefully selected security personnel, continuous practical training, and direct field supervision. Clear standards and close follow-up help our teams respond with discipline and professionalism.",
     "feature_1": "Careful screening before deployment",
     "feature_2": "Ongoing security training and development",
@@ -73,13 +73,13 @@
     "card_label": "EDARAH COMPANY PROFILE",
     "card_title": "Integrated security services",
     "card_caption": "Company profile · Established 2007",
-    "title": "Explore Edarah’s security capabilities.",
+    "title": "Explore Edarah’s security capabilities",
     "description": "Download our company profile for an overview of Edarah’s integrated security services, including guarding, electronic surveillance, risk management, and specialist training for public and private sector facilities.",
     "download_button": "Download Company Profile",
     "contact_button": "Contact Our Team"
   },
   "SpecializedEnvironments": {
-    "title": "Trained for specialized environments.",
+    "title": "Trained for specialized environments",
     "description": "From healthcare and industrial sites to commercial and residential communities, we tailor each security plan to the facility. Our personnel receive practical preparation for site duties and the situations they may face, supported by clear supervision and follow-up.",
     "feature_1": "Security plans tailored to each sector",
     "feature_2": "Training in first aid, crowd management, and emergency response",
@@ -87,7 +87,7 @@
     "image_alt": "Edarah security officer inside a commercial facility"
   },
   "CallToAction": {
-    "title": "Protect your facility with a plan built around it.",
+    "title": "Protect your facility with a plan built around it",
     "description": "From on-site guarding and electronic surveillance to risk assessment and specialist training, Edarah provides integrated security solutions tailored to each facility and sector.",
     "button": "Request a Security Consultation"
   },
@@ -98,7 +98,7 @@
     },
     "hero": {
       "eyebrow": "Specialized security coverage",
-      "title": "Security expertise across every environment.",
+      "title": "Security expertise across every environment",
       "description": "We build security plans around the demands of your industry and facility, delivered by trained teams with clear supervision.",
       "chip1": "Screened personnel",
       "chip2": "Clear standards",
@@ -110,7 +110,7 @@
     "programs": {
       "badge": "Security programs",
       "eyebrow": "Built around your facility",
-      "title": "Professional security programs with clear scope and accountable execution.",
+      "title": "Professional security programs with clear scope and accountable execution",
       "description": "Every service is structured around the facility type, operating hours, traffic patterns and the standards your site needs to maintain.",
       "recommended": "Recommended for",
       "cta": "Inquire about this service",
@@ -172,7 +172,7 @@
     },
     "quality": {
       "badge": "People first",
-      "title": "Security begins with the right people.",
+      "title": "Security begins with the right people",
       "subtitle": "Selected, trained and supervised.",
       "description": "The human element is the real difference in any security system. Every candidate passes a rigorous screening process before joining field teams, and every site is overseen by qualified supervisors.",
       "cta": "Download Company Profile",
@@ -233,7 +233,7 @@
     },
     "process": {
       "badge": "How we work",
-      "title": "A clear process from contract to deployment.",
+      "title": "A clear process from contract to deployment",
       "description": "A step-by-step approach that moves smoothly from agreement to field execution, without gaps.",
       "s1": {
         "title": "Initial assessment",
@@ -257,7 +257,7 @@
       }
     },
     "cta": {
-      "title": "Protect your facility with a plan built around it.",
+      "title": "Protect your facility with a plan built around it",
       "description": "Tell us about your site and we will recommend the right mix of guarding, surveillance and supervision.",
       "button": "Request a Security Consultation",
       "profile": "Download Company Profile"
@@ -270,7 +270,7 @@
     },
     "hero": {
       "eyebrow": "The Edarah standard",
-      "title": "Security that stays disciplined in every site we run.",
+      "title": "Security that stays disciplined in every site we run",
       "p1": "In a market where security services look alike on the surface, the difference is what lies beneath: institutional governance, qualified people and a clear way of working.",
       "p2": "Since 2007, we have protected commercial, industrial, residential and government facilities, combining guarding, electronic surveillance, risk management and specialist training.",
       "chip1": "Institutional governance",
@@ -281,7 +281,7 @@
     },
     "trust": {
       "eyebrow": "Why clients trust us",
-      "title": "What sets us apart on every site.",
+      "title": "What sets us apart on every site",
       "description": "A focused look at the structure, people and approach behind Edarah's work.",
       "t1": {
         "title": "Institutional backing",
@@ -307,7 +307,7 @@
     },
     "about": {
       "eyebrow": "About Edarah",
-      "title": "A team built around discipline, responsibility and trust.",
+      "title": "A team built around discipline, responsibility and trust",
       "caption": "The people behind Edarah",
       "description": "Edarah Security Services is a specialist provider of integrated security for the public and private sectors, serving commercial, industrial, residential and government clients. We offer guarding, electronic surveillance, risk management and training programs that qualify our security staff to the highest professional standards.",
       "group": "Edarah is part of Obaikan Holding Group, one of Saudi Arabia's leading economic groups, with a long presence in real estate development, contracting, operations, investment and property management.",
@@ -376,7 +376,7 @@
       }
     },
     "cta": {
-      "title": "Your security system starts here.",
+      "title": "Your security system starts here",
       "description": "Talk to our team about your facility, or download the company profile for a full overview.",
       "button": "Contact Our Team",
       "profile": "Download Company Profile"
@@ -447,6 +447,155 @@
       "group": "Edarah Security Services is part of Obaikan Holding Group."
     }
   },
+  "Career": {
+    "meta": {
+      "title": "Careers | Edarah Security Services",
+      "description": "Join Edarah Security Services. Carefully selected, continuously trained and supervised security teams, part of Obaikan Holding Group."
+    },
+    "hero": {
+      "eyebrow": "Careers at Edarah",
+      "title": "Build a career in security with Edarah.",
+      "description": "Join a team that is carefully selected, continuously trained and supervised on the ground, as part of Obaikan Holding Group.",
+      "cta": "Apply now",
+      "chip1": "Practical training",
+      "chip2": "Field supervision"
+    },
+    "why": {
+      "badge": "Why Edarah",
+      "title": "A workplace that invests in its people.",
+      "description": "Security is only as strong as the people behind it, so we focus on preparing, supporting and supervising every team member.",
+      "training": {
+        "title": "Continuous training",
+        "desc": "Programs covering guarding fundamentals, crowd management, first aid and emergency response."
+      },
+      "support": {
+        "title": "Supported on the ground",
+        "desc": "Every site has qualified supervisors and a direct line to management whenever something comes up."
+      },
+      "backing": {
+        "title": "Institutional backing",
+        "desc": "Part of Obaikan Holding Group, operating to high governance standards at every site."
+      },
+      "standards": {
+        "title": "Professional standards",
+        "desc": "A unified uniform and clear conduct standards that reflect a professional image."
+      },
+      "variety": {
+        "title": "Varied environments",
+        "desc": "Work across malls, hospitals, factories, residential communities and government facilities."
+      },
+      "method": {
+        "title": "A clear way of working",
+        "desc": "Clear operating methods and site plans, so you always know what is expected of you."
+      }
+    },
+    "process": {
+      "badge": "How hiring works",
+      "title": "From application to the field.",
+      "description": "A simple path with a careful screening step, because every candidate joins teams that protect real facilities.",
+      "s1": {
+        "title": "Apply",
+        "desc": "Send your details and CV through the application form below."
+      },
+      "s2": {
+        "title": "Screening",
+        "desc": "We check the security and conduct record, physical fitness and the ability to handle emergencies."
+      },
+      "s3": {
+        "title": "Training",
+        "desc": "Guarding fundamentals, crowd management, first aid and emergency response."
+      },
+      "s4": {
+        "title": "Field deployment",
+        "desc": "Join a field team under the direct supervision of qualified supervisors."
+      }
+    },
+    "roles": {
+      "badge": "Our teams",
+      "title": "Teams you could join",
+      "guard": {
+        "title": "Security guards",
+        "desc": "Fixed posts and mobile patrols."
+      },
+      "supervisor": {
+        "title": "Field supervisors",
+        "desc": "Leading site teams and following performance."
+      },
+      "control": {
+        "title": "Control room operators",
+        "desc": "Monitoring cameras and documenting activity."
+      },
+      "events": {
+        "title": "Events & crowd teams",
+        "desc": "Access control and crowd management."
+      },
+      "admin": {
+        "title": "Administration",
+        "desc": "Operations and administrative support."
+      },
+      "note": "Openings vary by site and period. Send your application and we will review it against current needs."
+    },
+    "form": {
+      "badge": "Join us",
+      "title": "Send your application",
+      "intro": "Fill in the form and attach your CV. Our team will review it against current openings.",
+      "include_title": "What to include",
+      "i1": "Your contact details and city",
+      "i2": "The role you are interested in",
+      "i3": "A short note about your experience, and your CV",
+      "name": "Full name",
+      "name_ph": "Your full name",
+      "phone": "Phone number",
+      "email": "Email address",
+      "city": "City",
+      "city_ph": "Select a city",
+      "cities": {
+        "riyadh": "Riyadh",
+        "jeddah": "Jeddah",
+        "makkah": "Makkah",
+        "madinah": "Madinah",
+        "taif": "Taif",
+        "dammam": "Dammam",
+        "khobar": "Khobar",
+        "dhahran": "Dhahran",
+        "jubail": "Jubail",
+        "qassim": "Qassim",
+        "tabuk": "Tabuk",
+        "abha": "Abha",
+        "khamis_mushait": "Khamis Mushait",
+        "jazan": "Jazan",
+        "najran": "Najran",
+        "hail": "Hail",
+        "yanbu": "Yanbu",
+        "other": "Other"
+      },
+      "search_ph": "Search...",
+      "no_results": "No matching results",
+      "position": "Role of interest",
+      "position_ph": "Select a role",
+      "positions": {
+        "guard": "Security guard",
+        "supervisor": "Field supervisor",
+        "control": "Control room operator",
+        "events": "Events & crowd management",
+        "admin": "Administration",
+        "other": "Other"
+      },
+      "about": "About you (optional)",
+      "about_ph": "Your experience, certificates or anything you would like us to know...",
+      "cv": "CV (optional)",
+      "cv_choose": "Choose a file",
+      "cv_hint": "PDF, DOC or DOCX, up to {mb} MB",
+      "cv_type_error": "Please upload a PDF, DOC or DOCX file.",
+      "cv_size_error": "The file is larger than {mb} MB.",
+      "submit": "Submit application",
+      "sending": "Sending...",
+      "error": "We couldn't send your application. Please try again, or email info@edarah-ss.com.",
+      "success_title": "Application sent",
+      "success_desc": "Thank you for your interest in Edarah. Our team will review your application.",
+      "send_another": "Send another application"
+    }
+  },
   "Footer": {
     "description": "Edarah Security Services has provided integrated protection for public and private sector facilities since 2007. Our services include guarding, electronic surveillance, risk management, and specialist security training.",
     "brand_line": "Integrated Security Services · Since 2007",
@@ -455,6 +604,7 @@
     "about": "About Edarah",
     "services": "Services",
     "sectors": "Sectors We Serve",
+    "career": "Careers",
     "contact": "Contact Us",
     "services_title": "Our Services",
     "legal_title": "Company Info",
@@ -473,5 +623,32 @@
     "location": "Taif, Saudi Arabia",
     "copyright": "© {year} Edarah Security Services. All rights reserved.",
     "group_note": "Part of Obaikan Holding Group"
+  },
+  "Privacy": {
+    "title": "Privacy Policy",
+    "last_updated": "Last Updated: 2024",
+    "s1_title": "Introduction",
+    "s1_desc": "Edarah Security Services respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and share your data when you visit our website or use our services.",
+    "s2_title": "Information We Collect",
+    "s2_desc": "We may collect the following types of information:",
+    "s2_l1": "Contact information (e.g., name, email address, phone number).",
+    "s2_l2": "Information about your facility and security requirements when requesting a consultation.",
+    "s2_l3": "Technical information (e.g., IP address, browser type) when using our website.",
+    "s3_title": "How We Use Your Information",
+    "s3_desc": "We use the information we collect to provide and improve our services, communicate with you, respond to your inquiries, and send service-related updates.",
+    "s4_title": "Data Protection",
+    "s4_desc": "We take appropriate security measures to protect your data from unauthorized access, alteration, disclosure, or destruction. We do not share your data with third parties except as required by law."
+  },
+  "Terms": {
+    "title": "Terms of Service",
+    "last_updated": "Last Updated: 2024",
+    "s1_title": "Acceptance of Terms",
+    "s1_desc": "By accessing the Edarah Security Services website or using our services, you agree to be bound by these Terms of Service. If you do not agree to any part of the terms, please do not use our website or services.",
+    "s2_title": "Use of Services",
+    "s2_desc": "Our services must be used only for lawful purposes and in a manner that does not infringe the rights of others or restrict their use or enjoyment of the services. You are responsible for ensuring the accuracy of the information you provide to us.",
+    "s3_title": "Intellectual Property",
+    "s3_desc": "All content, trademarks, and data on this website are the property of Edarah Security Services or Obaikan Holding Group and are protected by intellectual property laws.",
+    "s4_title": "Disclaimer of Warranties",
+    "s4_desc": "Our services and website are provided on an 'as is' and 'as available' basis. We make no warranties, expressed or implied, regarding the operation of the site or the information or content included on it."
   }
 }

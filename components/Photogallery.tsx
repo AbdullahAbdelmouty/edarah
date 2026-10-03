@@ -44,7 +44,7 @@ export default function PhotoGallery({ photos }: { photos: Photo[] }) {
             <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/15" />
 
             {/* index + caption (decorative; alt text already covers a11y) */}
-            <figcaption
+            {/* <figcaption
               aria-hidden="true"
               className="absolute inset-x-3 bottom-3 flex items-center gap-3 rounded-2xl border border-white/20 bg-black/30 p-2.5 pe-4 text-white backdrop-blur-md transition duration-500 sm:translate-y-1 sm:opacity-90 sm:group-hover:translate-y-0 sm:group-hover:opacity-100"
             >
@@ -54,7 +54,7 @@ export default function PhotoGallery({ photos }: { photos: Photo[] }) {
               <span className="line-clamp-2 text-xs leading-5 text-white/90">
                 {photo.alt}
               </span>
-            </figcaption>
+            </figcaption> */}
           </motion.figure>
         ))}
       </div>
