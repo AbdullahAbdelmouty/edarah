@@ -537,43 +537,167 @@
     },
     "form": {
       "badge": "Join us",
-      "title": "Send your application",
-      "intro": "Fill in the form and attach your CV. Our team will review it against current openings.",
-      "include_title": "What to include",
-      "i1": "Your contact details and city",
-      "i2": "The role you are interested in",
-      "i3": "A short note about your experience, and your CV",
-      "name": "Full name",
-      "name_ph": "Your full name",
-      "phone": "Phone number",
-      "email": "Email address",
-      "city": "City",
-      "city_ph": "Select a city",
-      "cities": {
-        "riyadh": "Riyadh",
-        "jeddah": "Jeddah",
-        "makkah": "Makkah",
-        "madinah": "Madinah",
-        "taif": "Taif",
-        "dammam": "Dammam",
-        "khobar": "Khobar",
-        "dhahran": "Dhahran",
-        "jubail": "Jubail",
-        "qassim": "Qassim",
-        "tabuk": "Tabuk",
-        "abha": "Abha",
-        "khamis_mushait": "Khamis Mushait",
-        "jazan": "Jazan",
-        "najran": "Najran",
-        "hail": "Hail",
-        "yanbu": "Yanbu",
-        "other": "Other"
+      "title": "Apply for a job",
+      "intro": "Complete the application in nine short steps. A progress bar shows how far along you are.",
+      "include_title": "Have these ready",
+      "i1": "Your ID or Iqama number and a copy of it (PDF, JPG or PNG)",
+      "i2": "Details of your previous security work and courses, if any",
+      "i3": "Your CV, which is optional"
+    }
+  },
+  "Apply": {
+    "progress": {
+      "step": "Step {current} of {total}",
+      "done": "Completed"
+    },
+    "required_note": "Fields marked with * are required.",
+    "select": "Select",
+    "yes": "Yes",
+    "no": "No",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit application",
+    "sending": "Sending...",
+    "agree": "I confirm that all the information entered is true and accurate, and I take responsibility for the accuracy of the information and documents attached.",
+    "steps": {
+      "personal": "Personal information",
+      "education": "Education and physical details",
+      "legal": "Legal and financial details",
+      "requirements": "Security job requirements",
+      "experience": "Work experience",
+      "courses": "Courses and professional qualifications",
+      "extra": "Additional experience and skills",
+      "attachments": "Attachments",
+      "readiness": "Readiness to join"
+    },
+    "groups": {
+      "sites": "Experience in sites and facilities",
+      "siteTypes": "Types of sites you have worked in",
+      "skills": "Security skills",
+      "ability": "Ability to perform job duties"
+    },
+    "fields": {
+      "fullName": {
+        "label": "Full name"
       },
-      "search_ph": "Search...",
-      "no_results": "No matching results",
-      "position": "Role of interest",
-      "position_ph": "Select a role",
-      "positions": {
+      "birthDate": {
+        "label": "Date of birth"
+      },
+      "nationality": {
+        "label": "Nationality"
+      },
+      "gender": {
+        "label": "Gender"
+      },
+      "marital": {
+        "label": "Marital status"
+      },
+      "phone": {
+        "label": "Mobile number"
+      },
+      "email": {
+        "label": "Email address (optional)"
+      },
+      "city": {
+        "label": "City of residence"
+      },
+      "education": {
+        "label": "Education level"
+      },
+      "major": {
+        "label": "Field of study (optional)"
+      },
+      "height": {
+        "label": "Height (cm)"
+      },
+      "weight": {
+        "label": "Weight (kg)"
+      },
+      "nationalId": {
+        "label": "National ID / Iqama number"
+      },
+      "iban": {
+        "label": "IBAN (optional)"
+      },
+      "idCopy": {
+        "label": "Copy of ID / Iqama"
+      },
+      "position": {
+        "label": "Role of interest"
+      },
+      "shift": {
+        "label": "Preferred shift"
+      },
+      "preferredCity": {
+        "label": "Preferred work location (optional)"
+      },
+      "years": {
+        "label": "Years of experience in security"
+      },
+      "companies": {
+        "label": "Name(s) of previous security companies"
+      },
+      "hasCourses": {
+        "label": "Have you taken any security courses or earned professional certificates?"
+      },
+      "coursesText": {
+        "label": "Names of courses and certificates"
+      },
+      "coursesFiles": {
+        "label": "Upload certificates and courses (optional)"
+      },
+      "sensitiveSites": {
+        "label": "Have you worked at sensitive sites or major facilities before?"
+      },
+      "sensitiveSiteType": {
+        "label": "Please state the type of site or facility"
+      },
+      "siteTypes": {
+        "label": "Select all that apply"
+      },
+      "cctv": {
+        "label": "Do you have experience using surveillance systems and CCTV cameras?"
+      },
+      "reports": {
+        "label": "Do you have experience preparing security reports and writing incident reports?"
+      },
+      "access": {
+        "label": "Do you have experience handling access control devices and systems?"
+      },
+      "firstAid": {
+        "label": "Do you have experience in first aid or handling emergencies?"
+      },
+      "standing": {
+        "label": "Can you work long hours and stand for extended periods?"
+      },
+      "healthIssue": {
+        "label": "Do you have any health or physical condition that affects your ability to perform the job duties?"
+      },
+      "cv": {
+        "label": "CV (optional)"
+      },
+      "readiness": {
+        "label": "How soon can you join if your application is accepted?"
+      }
+    },
+    "options": {
+      "gender": {
+        "male": "Male",
+        "female": "Female"
+      },
+      "marital": {
+        "single": "Single",
+        "married": "Married"
+      },
+      "education": {
+        "primary": "Primary",
+        "intermediate": "Intermediate",
+        "secondary": "Secondary",
+        "diploma": "Diploma",
+        "bachelor": "Bachelor's degree",
+        "postgrad": "Postgraduate"
+      },
+      "position": {
         "guard": "Security guard",
         "supervisor": "Field supervisor",
         "control": "Control room operator",
@@ -581,20 +705,56 @@
         "admin": "Administration",
         "other": "Other"
       },
-      "about": "About you (optional)",
-      "about_ph": "Your experience, certificates or anything you would like us to know...",
-      "cv": "CV (optional)",
-      "cv_choose": "Choose a file",
-      "cv_hint": "PDF, DOC or DOCX, up to {mb} MB",
-      "cv_type_error": "Please upload a PDF, DOC or DOCX file.",
-      "cv_size_error": "The file is larger than {mb} MB.",
-      "submit": "Submit application",
-      "sending": "Sending...",
-      "error": "We couldn't send your application. Please try again, or email info@edarah-ss.com.",
-      "success_title": "Application sent",
-      "success_desc": "Thank you for your interest in Edarah. Our team will review your application.",
-      "send_another": "Send another application"
-    }
+      "shift": {
+        "morning": "Morning",
+        "evening": "Evening",
+        "midnight": "After midnight"
+      },
+      "years": {
+        "none": "No experience",
+        "lt1": "Less than 1 year",
+        "1to3": "1 to 3 years",
+        "3to5": "3 to 5 years",
+        "gt5": "More than 5 years"
+      },
+      "siteTypes": {
+        "hospitals": "Hospitals",
+        "malls": "Shopping centres",
+        "factories": "Factories",
+        "residential": "Residential sites",
+        "government": "Government facilities",
+        "construction": "Construction projects"
+      },
+      "readiness": {
+        "now": "Immediately",
+        "week": "Within a week",
+        "two_weeks": "Within two weeks",
+        "month": "Within a month"
+      }
+    },
+    "list": {
+      "add": "Add another company",
+      "placeholder": "Company name"
+    },
+    "files": {
+      "choose": "Choose a file",
+      "add_more": "Add more files",
+      "hint": "PDF, JPG or PNG, up to {mb} MB",
+      "remove": "Remove",
+      "type_error": "Please upload a PDF, JPG or PNG file.",
+      "size_error": "A file is larger than {mb} MB.",
+      "count_error": "You can upload up to {n} files."
+    },
+    "errors": {
+      "required": "This field is required.",
+      "email": "Please enter a valid email address.",
+      "range": "Please enter a value between {min} and {max}.",
+      "agree": "Please confirm the declaration to submit."
+    },
+    "error": "We couldn't send your application. Please try again, or email info@edarah-ss.com.",
+    "success_title": "Application received",
+    "success_desc": "Your job application has been received successfully. Thank you for applying. We will contact you if your qualifications and experience match the job requirements.",
+    "send_another": "Submit another application"
   },
   "Footer": {
     "description": "Edarah Security Services has provided integrated protection for public and private sector facilities since 2007. Our services include guarding, electronic surveillance, risk management, and specialist security training.",
